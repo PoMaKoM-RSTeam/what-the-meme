@@ -1,0 +1,18 @@
+.meme-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+.meme-title {
+  font-size: 6rem;
+  color: #58C2BD;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.meme-title__first {
+  color: #382756;
+}
+.meme-title__second {
+  color: #BF437A;
+}

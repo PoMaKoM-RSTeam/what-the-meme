@@ -1,0 +1,24 @@
+.navigation-wrap{
+  margin-top: 140px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.nav-btn {
+  width: 285px;
+  padding: 10px;
+  font-size: 2rem;
+  border-radius: 39px;
+  border-style: solid;
+  border-width: 4px;
+  text-align: center;
+  text-decoration: none;
+  color: #382756;
+}
+.navigation-btn__join {
+  border-color: #58C2BD;
+}
+.navigation-btn__create {
+  border-color: #BF437A;
+}
