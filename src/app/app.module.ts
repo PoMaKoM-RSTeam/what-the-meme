@@ -7,6 +7,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { JoinPageComponent } from './pages/join-page/join-page.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { NameFieldComponent } from './components/name-field/name-field.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     MainPageComponent,
     JoinPageComponent,
     LogoComponent,
-    NavigationComponent
+    NavigationComponent,
+    NameFieldComponent
   ],
   imports: [
     BrowserModule,

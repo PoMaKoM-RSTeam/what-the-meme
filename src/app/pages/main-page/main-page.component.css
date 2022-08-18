@@ -16,3 +16,8 @@
 .meme-title__second {
   color: #BF437A;
 }
+.name-container {
+  flex-grow: 0;
+  flex-basis: 100%;
+  flex-shrink: 0;
+}
