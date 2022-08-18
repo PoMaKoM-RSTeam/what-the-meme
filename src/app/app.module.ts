@@ -8,6 +8,7 @@ import { JoinPageComponent } from './pages/join-page/join-page.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NameFieldComponent } from './components/name-field/name-field.component';
+import { RoomViewComponent } from './components/room-view/room-view.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NameFieldComponent } from './components/name-field/name-field.component
     JoinPageComponent,
     LogoComponent,
     NavigationComponent,
+    RoomViewComponent,
     NameFieldComponent
   ],
   imports: [
