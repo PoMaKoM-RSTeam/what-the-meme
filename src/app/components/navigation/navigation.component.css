@@ -1,6 +1,8 @@
 .navigation-wrap{
-  margin-top: 140px;
+  max-width: 590px;
+  margin: 60px auto 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
   align-items: center;

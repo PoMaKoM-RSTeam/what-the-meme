@@ -1,0 +1,15 @@
+.mat-form-field {
+  width: 100%;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #673ab7;
+  opacity: 1;
+}
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start, 
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-end,
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-gap {
+  border-width: 4px!important;
+}
