@@ -8,14 +8,15 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-
+  currentUser: User = {}
   constructor(private navigationService: NavigationService) { }
-
+  
   ngOnInit(): void {
   }
 
   collectUser() {
-    console.log(this.navigationService.name)
-    console.log(this.navigationService.image)
+    this.currentUser.name = this.navigationService.name;
+    this.currentUser.image = this.navigationService.image;
+    console.log(this.currentUser)
   }
 }
