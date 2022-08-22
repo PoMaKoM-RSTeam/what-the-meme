@@ -8,6 +8,8 @@ import { JoinPageComponent } from './pages/join-page/join-page.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RoomViewComponent } from './components/room-view/room-view.component';
+import { CreatePageComponent } from './pages/create-page/create-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,14 @@ import { RoomViewComponent } from './components/room-view/room-view.component';
     JoinPageComponent,
     LogoComponent,
     NavigationComponent,
-    RoomViewComponent
+    RoomViewComponent,
+    CreatePageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,44 @@
+<div class="create-wrap">
+  <app-logo></app-logo>
+  <div class="settings">
+
+    <form [formGroup]="form" class="create-room-wrap" autocomplete="off" (ngSubmit)="onSubmit()">
+
+      <div class="setting-container">
+        <label class="setting-title" for="name">Room name</label>
+        <input type="text" id="name" class="input-setting-text" placeholder="Enter room name" required
+          formControlName="name">
+      </div>
+
+      <div class="setting-container">
+        <label class="setting-title" for="game-mode">Game mode</label>
+        <div class="game-mode-container">
+          <input type="radio" name="game-mode-input" id="public" checked 
+            (change)="changeGameMode('public')">
+          <label class="game-mode-text" for="public">Public</label>
+          <input type="radio" name="game-mode-input" id="private" (change)="changeGameMode('private')">
+          <label class="game-mode-text" for="private">Private</label>
+        </div>
+      </div>
+
+      <div [ngStyle]="{
+        display: privateMode ? 'flex' : 'none'
+      }" class="setting-container">
+        <label class="setting-title" for="pass">Room pass</label>
+        <input type="text" id="pass" class="input-setting-text" placeholder="Enter room pass" maxlength="4" formControlName="pass">
+      </div>
+
+      <div class="slider-container">
+        <span class="setting-title">Members</span>
+        <div class="slider">
+          <input class="slider-input" id="slider" type="range" min="2" max="8" step="1" value="2"
+            formControlName="members">
+          <label class="slider-count" for="slider" [textContent]=[form.value.members]></label>
+        </div>
+      </div>
+
+      <input class="submit-button" type="submit" value="Create" [disabled]="form.invalid">
+
+    </form>
+
+  </div>
