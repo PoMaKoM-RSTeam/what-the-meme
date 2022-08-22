@@ -16,8 +16,8 @@ import { MatInputModule } from '@angular/material/input';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import {MatIconModule} from '@angular/material/icon'
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreatePageComponent } from './pages/create-page/create-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { FormsModule } from '@angular/forms';
     RoomViewComponent,
     NameFieldComponent,
     AvatarComponent,
-
+    CreatePageComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatIconModule,
     FormsModule
+    ReactiveFormsModule,
   ],
   providers: [NavigationService],
   bootstrap: [AppComponent]
