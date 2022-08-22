@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Baby Yoda",
+    "path": "./assets/images/avatar-images/baby-yoda.jpg"
+  },
+  {
+    "name": "Akward Look Monkey",
+    "path": "./assets/images/avatar-images/akward-look-monkey.jpg"
+  },
+  {
+    "name": "Confused Cat",
+    "path": "./assets/images/avatar-images/confused-cat.jpg"
+  },
+  {
+    "name": "Cool Pepe",
+    "path": "./assets/images/avatar-images/cool-pepe.jpg"
+  },
+  {
+    "name": "Drake",
+    "path": "./assets/images/avatar-images/drake.jpg"
+  },
+  {
+    "name": "Evil Doge",
+    "path": "./assets/images/avatar-images/evil-doge.jpg"
+  },
+  {
+    "name": "Handsome Squidward",
+    "path": "./assets/images/avatar-images/handsome-squidward.jpg"
+  },
+  {
+    "name": "Harold",
+    "path": "./assets/images/avatar-images/harold.jpg"
+  },
+  {
+    "name": "Leonardo",
+    "path": "./assets/images/avatar-images/leonardo.jpg"
+  },
+  {
+    "name": "Mike Wazowski",
+    "path": "./assets/images/avatar-images/mike-wazowski.jpg"
+  },
+  {
+    "name": "Spongegar",
+    "path": "./assets/images/avatar-images/spongegar.jpg"
+  },
+  {
+    "name": "Stonks",
+    "path": "./assets/images/avatar-images/stonks.jpg"
+  },
+  {
+    "name": "Surprised",
+    "path": "./assets/images/avatar-images/surprised.jpg"
+  },
+  {
+    "name": "Thomas",
+    "path": "./assets/images/avatar-images/thomas.jpg"
+  },
+  {
+    "name": "Tuxedo Pooh",
+    "path": "./assets/images/avatar-images/tuxedo-pooh.jpg"
+  }
+]

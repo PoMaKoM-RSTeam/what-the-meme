@@ -1,4 +1,6 @@
+import { NavigationService } from '../navigation/navigation.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private navigationService: NavigationService) { }
 
   ngOnInit(): void {
   }
 
+  collectUser() {
+    console.log(this.navigationService.name)
+    console.log(this.navigationService.image)
+  }
 }
