@@ -1,7 +1,9 @@
 <div class="room-container">
-  <div class="room-img__wrap"></div>
+  <div class="room-img__wrap">
+    <img [src]="room.image" alt="Room Image" class="room-img">
+  </div>
   <div class="room-users__wrap">
-    1/5
+    {{ room.users.length }}/5
   </div>
   <div class="room-join__wrap">
     <a class="room-join__link">Join room</a>

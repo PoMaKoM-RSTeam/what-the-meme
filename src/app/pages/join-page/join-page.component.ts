@@ -1,3 +1,4 @@
+import { RoomsService } from './../../services/rooms.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./join-page.component.css']
 })
 export class JoinPageComponent implements OnInit {
-
-  constructor() { }
+  page: number = 1;
+  constructor(public roomsService: RoomsService) { }
 
   ngOnInit(): void {
+    this.roomsService.getAllRooms().subscribe()
   }
 
 }

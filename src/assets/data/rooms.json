@@ -1,0 +1,98 @@
+[
+  {
+    "users": [
+    {
+      "name": "Baby Yoda",
+      "image": "./assets/images/avatar-images/baby-yoda.jpg"
+    },
+    {
+      "name": "Akward Look Monkey",
+      "image": "./assets/images/avatar-images/akward-look-monkey.jpg"
+    }
+  ],
+    "image": "./assets/images/avatar-images/akward-look-monkey.jpg"
+  },
+
+  {
+    "users": [
+    {
+      "name": "Baby Yoda",
+      "image": "./assets/images/avatar-images/baby-yoda.jpg"
+    },
+    {
+      "name": "Akward Look Monkey",
+      "image": "./assets/images/avatar-images/akward-look-monkey.jpg"
+    },
+    {
+      "name": "Akward Look Monkey",
+      "image": "./assets/images/avatar-images/akward-look-monkey.jpg"
+    }
+  ],
+    "image": "./assets/images/avatar-images/evil-doge.jpg"
+  },
+
+  {
+    "users": [
+    {
+      "name": "Baby Yoda",
+      "image": "./assets/images/avatar-images/baby-yoda.jpg"
+    },
+    {
+      "name": "Akward Look Monkey",
+      "image": "./assets/images/avatar-images/akward-look-monkey.jpg"
+    },
+    {
+      "name": "Akward Look Monkey",
+      "image": "./assets/images/avatar-images/akward-look-monkey.jpg"
+    },
+    {
+      "name": "Akward Look Monkey",
+      "image": "./assets/images/avatar-images/akward-look-monkey.jpg"
+    }
+  ],
+    "image": "./assets/images/avatar-images/handsome-squidward.jpg"
+  },
+
+  {
+    "users": [
+    {
+      "name": "Baby Yoda",
+      "image": "./assets/images/avatar-images/baby-yoda.jpg"
+    }
+  ],
+    "image": "./assets/images/avatar-images/spongegar.jpg"
+  },
+
+  {
+    "users": [
+    {
+      "name": "Baby Yoda",
+      "image": "./assets/images/avatar-images/baby-yoda.jpg"
+    },
+    {
+      "name": "Akward Look Monkey",
+      "image": "./assets/images/avatar-images/akward-look-monkey.jpg"
+    }
+  ],
+    "image": "./assets/images/avatar-images/surprised.jpg"
+  },
+
+  {
+    "users": [
+    {
+      "name": "Baby Yoda",
+      "image": "./assets/images/avatar-images/baby-yoda.jpg"
+    },
+    {
+      "name": "Akward Look Monkey",
+      "image": "./assets/images/avatar-images/akward-look-monkey.jpg"
+    },
+    {
+      "name": "Akward Look Monkey",
+      "image": "./assets/images/avatar-images/akward-look-monkey.jpg"
+    }
+  ],
+    "image": "./assets/images/avatar-images/baby-yoda.jpg"
+  }
+  
+]

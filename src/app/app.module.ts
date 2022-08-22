@@ -17,7 +17,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 import {MatIconModule} from '@angular/material/icon'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [NavigationService],
   bootstrap: [AppComponent]
