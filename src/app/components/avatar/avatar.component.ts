@@ -1,3 +1,4 @@
+import { NavigationService } from '../navigation/navigation.service';
 import { AvatarService } from './../../services/avatar.service';
 import { Avatar } from './../../models/avatar';
 import { Component, Input, OnInit } from '@angular/core';
@@ -13,8 +14,8 @@ export class AvatarComponent implements OnInit {
   avatarImage = './assets/images/avatar-images/baby-yoda.jpg';
   avatarName = 'Baby Yoda';
   count = 1;
-  constructor(public avatarsService: AvatarService) { 
-
+  constructor(public avatarsService: AvatarService, private navigationService: NavigationService) { 
+    this.navigationService.image = this.avatarImage
   }
 
   ngOnInit(): void {
@@ -27,15 +28,16 @@ export class AvatarComponent implements OnInit {
     if (this.count === this.avatarImages.length - 1) {
       this.avatarImage = this.avatarImages[this.count].path
       this.avatarName = this.avatarImages[this.count].name as string
+      this.navigationService.image = this.avatarImage;
       this.count = 0
     }
     else{
       this.avatarImage = this.avatarImages[this.count].path
       this.avatarName = this.avatarImages[this.count].name as string
+      this.navigationService.image = this.avatarImage;
       this.count += 1;
     }
     
-    console.log(this.avatarImage);
   }
 
 }
