@@ -2,7 +2,10 @@
   <p>
     <mat-form-field appearance="outline">
       <mat-label>Имя</mat-label>
-      <input matInput autocomplete="off" >
+      <input matInput 
+        autocomplete="off"
+        [(ngModel)]="navigationService.name"
+       >
     </mat-form-field>
   </p>
   

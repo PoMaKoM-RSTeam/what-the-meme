@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { NavigationService } from '../navigation/navigation.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-name-field',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NameFieldComponent implements OnInit {
 
-  constructor() { }
+  constructor(public navigationService: NavigationService) {
+   }
 
   ngOnInit(): void {
+    
   }
 
 }
