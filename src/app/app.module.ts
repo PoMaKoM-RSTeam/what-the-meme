@@ -16,9 +16,9 @@ import { MatInputModule } from '@angular/material/input';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import {MatIconModule} from '@angular/material/icon'
 import { HttpClientModule } from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreatePageComponent } from './pages/create-page/create-page.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +39,8 @@ import { CreatePageComponent } from './pages/create-page/create-page.component';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    FormsModule
+    NgxPaginationModule,
+    FormsModule,
     ReactiveFormsModule,
   ],
   providers: [NavigationService],

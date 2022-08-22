@@ -1,10 +1,29 @@
 <div class="join-wrap">
   <app-logo></app-logo>
-  <div  class="rooms-wrap">
-    <app-room-view></app-room-view>
-    <app-room-view></app-room-view>
-    <app-room-view></app-room-view>
-    <app-room-view></app-room-view>
-    <app-room-view></app-room-view>
+  <div class="join-container">
+    <div *ngIf="roomsService.rooms" class="rooms-wrap">
+      <app-room-view
+      *ngFor="let room of roomsService.rooms | paginate: { itemsPerPage: 5, currentPage: page } let i = index; "
+        [room]="room"
+        [id]="i"
+      >
+      </app-room-view>
+      
+    </div>
+    <pagination-template #api="paginationApi"
+                        class="custom-page-controls"
+                      (pageChange)="page = $event"
+                      (pageBoundsCorrection)="page = $event">
+          <div class="pagination-previous" [class.disabled]="api.isFirstPage()">
+              <a  class="pagination-previous-btn" (click)="api.previous()">  </a>
+          </div>
+          <div class="pagination-pages">
+            {{ api.getCurrent() }} | {{ api.getLastPage() }}
+          </div>
+          <div class="pagination-next" [class.disabled]="api.isLastPage()">
+              <a  class="pagination-next-btn" (click)="!api.isLastPage() ? api.next() : null">  </a>
+          </div>
+          
+    </pagination-template>
   </div>
 </div>

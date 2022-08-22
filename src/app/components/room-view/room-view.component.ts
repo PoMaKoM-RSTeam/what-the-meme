@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Room } from './../../models/room';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-room-view',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomViewComponent implements OnInit {
 
+  @Input() room: Room;
+  
   constructor() { }
 
   ngOnInit(): void {
