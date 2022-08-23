@@ -3,9 +3,10 @@
     <img [src]="room.image" alt="Room Image" class="room-img">
   </div>
   <div class="room-users__wrap">
-    {{ room.users.length }}/5
+    {{ room.users.length }}/{{ room.members }}
   </div>
   <div class="room-join__wrap">
+    <mat-icon *ngIf="room.pass" class="lock-icon">lock</mat-icon>
     <a class="room-join__link">Join room</a>
   </div>
 </div>

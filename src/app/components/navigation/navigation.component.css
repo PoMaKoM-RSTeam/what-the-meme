@@ -17,6 +17,8 @@
   text-align: center;
   text-decoration: none;
   color: #382756;
+  background-color: #ffff;
+  cursor: pointer;
 }
 .navigation-btn__join {
   border-color: #58C2BD;

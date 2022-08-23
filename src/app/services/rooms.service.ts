@@ -14,7 +14,7 @@ export class RoomsService {
 
   getAllRooms(): Observable<Room[]> {
     
-    return this.http.get<Room[]>('../../assets/data/rooms.json').pipe(
+    return this.http.get<Room[]>('http://localhost:5000/api/room?empty=true').pipe(
       tap(rooms => this.rooms = rooms)
     );
   }
