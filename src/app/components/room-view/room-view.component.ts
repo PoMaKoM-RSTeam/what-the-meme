@@ -13,6 +13,7 @@ export class RoomViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

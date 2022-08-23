@@ -1,5 +1,6 @@
 <div class="navigation-wrap">
   <ng-content></ng-content>
-  <a routerLink="/join" (click)="collectUser()" class="nav-btn navigation-btn__join">Join room</a>
-  <a routerLink="/create" (click)="collectUser()" class="nav-btn navigation-btn__create">Create room</a>
+  <span *ngIf="chekName">Write Name</span>
+  <button (click)="collectUser('/join')" class="nav-btn navigation-btn__join">Join room</button>
+  <button  (click)="collectUser('/create')" class="nav-btn navigation-btn__create">Create room</button>
 </div>

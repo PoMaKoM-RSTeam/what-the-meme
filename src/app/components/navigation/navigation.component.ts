@@ -1,6 +1,8 @@
+import { UsersService } from './../../services/users.service';
 import { NavigationService } from '../navigation/navigation.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -8,15 +10,24 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+  chekName = false;
   currentUser: User = {}
-  constructor(private navigationService: NavigationService) { }
+  constructor(private navigationService: NavigationService, private userService: UsersService, private router: Router) { }
   
   ngOnInit(): void {
   }
 
-  collectUser() {
-    this.currentUser.name = this.navigationService.name;
-    this.currentUser.image = this.navigationService.image;
-    console.log(this.currentUser)
+  collectUser(link: string) {
+    if (this.navigationService.name) {
+      this.router.navigateByUrl(link)
+      this.currentUser.name = this.navigationService.name;
+      this.currentUser.image = this.navigationService.image;
+      this.userService.createUser(this.currentUser).subscribe();
+    }
+    else {
+      this.chekName = true;
+    }
+    
+    
   }
 }
