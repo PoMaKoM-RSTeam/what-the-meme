@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreatePageComponent } from './pages/create-page/create-page.component';
+import { ModalComponent } from './components/modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { CreatePageComponent } from './pages/create-page/create-page.component';
     RoomViewComponent,
     NameFieldComponent,
     AvatarComponent,
-    CreatePageComponent
+    CreatePageComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
