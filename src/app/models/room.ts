@@ -1,6 +1,6 @@
 import { User } from 'src/app/models/user';
 export interface Room {
-  id?: string
+  _id?: string
   users: string[]
   members: number
   name: string

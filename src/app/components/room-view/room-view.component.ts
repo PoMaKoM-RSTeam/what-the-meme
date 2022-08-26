@@ -21,7 +21,7 @@ export class RoomViewComponent implements OnInit {
   openRoom(roomPass: string, roomId?: string,) {
     if(roomId)
     {
-      this.roomIdService.id = roomId;
+      this.roomIdService._id = roomId;
       this.roomIdService.pass = roomPass;
       this.modalPasswordService.open();
     }
