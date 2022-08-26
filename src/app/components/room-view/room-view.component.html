@@ -7,6 +7,6 @@
   </div>
   <div class="room-join__wrap">
     <mat-icon *ngIf="room.pass" class="lock-icon">lock</mat-icon>
-    <a class="room-join__link">Join room</a>
+    <button (click)="openRoom(room.pass, room.id)" class="room-join__link">Join room</button>
   </div>
 </div>
