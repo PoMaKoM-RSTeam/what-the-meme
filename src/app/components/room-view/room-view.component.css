@@ -25,6 +25,10 @@
 .room-join__link {
   color: #58C2BD;
   text-decoration: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .room-join__wrap {

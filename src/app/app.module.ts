@@ -20,6 +20,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { GamePageComponent } from './pages/game-page/game-page.component';
+import { ModalPasswordComponent } from './components/modal-password/modal-password.component';
+import { FocusDirective } from './directives/focus.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,10 @@ import { ModalComponent } from './components/modal/modal.component';
     NameFieldComponent,
     AvatarComponent,
     CreatePageComponent,
-    ModalComponent
+    ModalComponent,
+    GamePageComponent,
+    ModalPasswordComponent,
+    FocusDirective
   ],
   imports: [
     BrowserModule,

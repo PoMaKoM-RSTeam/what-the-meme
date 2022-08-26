@@ -1,3 +1,6 @@
+import { ModalPasswordService } from './../modal-password/modal-password.service';
+import { RoomIdService } from './room-id.service';
+import { Router } from '@angular/router';
 import { Room } from './../../models/room';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -10,10 +13,19 @@ export class RoomViewComponent implements OnInit {
 
   @Input() room: Room;
   
-  constructor() { }
+  constructor(private router: Router, private roomIdService: RoomIdService, public modalPasswordService: ModalPasswordService) { }
 
   ngOnInit(): void {
     
   }
+  openRoom(roomPass: string, roomId?: string,) {
+    if(roomId)
+    {
+      this.roomIdService.id = roomId;
+      this.roomIdService.pass = roomPass;
+      this.modalPasswordService.open();
+    }
+    this.router.navigate(['room/' + roomId])
 
+  }
 }
