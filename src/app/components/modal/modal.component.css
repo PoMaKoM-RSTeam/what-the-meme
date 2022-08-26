@@ -20,6 +20,7 @@
   border-radius: 10px;
   user-select: none;
   color: white;
+  z-index: 10;
 }
 
 .modal-title {
@@ -44,11 +45,11 @@
   font-weight: bold;
   margin: 10px;
   padding: 10px;
-  background-color:#BF437A;
+  background-color: #BF437A;
   cursor: pointer;
   color: white;
 }
 
 .modal-button:hover {
- background-color: #e04e90;
+  background-color: #e04e90;
 }

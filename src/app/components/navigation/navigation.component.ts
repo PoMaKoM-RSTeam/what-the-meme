@@ -14,6 +14,7 @@ export class NavigationComponent implements OnInit {
   currentUser: User = {}
   constructor(public navigationService: NavigationService, private userService: UsersService, private router: Router) { }
   
+
   ngOnInit(): void {
   }
 
@@ -22,12 +23,12 @@ export class NavigationComponent implements OnInit {
       this.router.navigateByUrl(link)
       this.currentUser.name = this.navigationService.name;
       this.currentUser.image = this.navigationService.image;
-      this.userService.createUser(this.currentUser).subscribe();
+      this.userService.createUser(this.currentUser).subscribe((response) => { localStorage.setItem('user', JSON.stringify(response)) });
     }
     else {
       this.chekName = true;
     }
-    
-    
+
+
   }
 }
