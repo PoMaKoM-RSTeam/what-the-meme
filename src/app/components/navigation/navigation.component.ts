@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 export class NavigationComponent implements OnInit {
   chekName = false;
   currentUser: User = {}
-  constructor(private navigationService: NavigationService, private userService: UsersService, private router: Router) { }
+  constructor(public navigationService: NavigationService, private userService: UsersService, private router: Router) { }
+  
 
   ngOnInit(): void {
   }

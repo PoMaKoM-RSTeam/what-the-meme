@@ -13,7 +13,6 @@ export class RoomsService {
   rooms: Room[] = []
 
   getAllRooms(): Observable<Room[]> {
-
     return this.http.get<Room[]>('http://localhost:5000/api/room?empty=true').pipe(
       tap(rooms => this.rooms = rooms)
     );

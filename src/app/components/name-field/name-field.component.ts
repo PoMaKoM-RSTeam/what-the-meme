@@ -7,7 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./name-field.component.css']
 })
 export class NameFieldComponent implements OnInit {
-
   constructor(public navigationService: NavigationService) {
    }
 
