@@ -11,7 +11,7 @@ export class GamePageComponent implements OnInit {
 
   currentRoomId = '';
   constructor(public roomIdService: RoomIdService, public modalPasswordService: ModalPasswordService) { 
-    this.currentRoomId = this.roomIdService.id
+    this.currentRoomId = this.roomIdService._id
   }
 
   ngOnInit(): void {
