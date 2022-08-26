@@ -20,6 +20,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { DynamicChildLoaderDirective } from './directives/dynamic-child-loader.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { ModalComponent } from './components/modal/modal.component';
     NameFieldComponent,
     AvatarComponent,
     CreatePageComponent,
-    ModalComponent
+    ModalComponent,
+    DynamicChildLoaderDirective
   ],
   imports: [
     BrowserModule,
