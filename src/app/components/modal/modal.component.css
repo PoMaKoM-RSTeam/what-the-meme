@@ -36,6 +36,8 @@
   font-size: 22px;
   color: #382756;
   padding: 0 10px;
+  white-space: pre;
+  text-align: left;
 }
 
 .modal-button {
