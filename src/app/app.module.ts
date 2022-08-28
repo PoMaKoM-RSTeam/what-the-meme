@@ -24,6 +24,7 @@ import { DynamicChildLoaderDirective } from './directives/dynamic-child-loader.d
 import { GamePageComponent } from './pages/game-page/game-page.component';
 import { ModalPasswordComponent } from './components/modal-password/modal-password.component';
 import { FocusDirective } from './directives/focus.directive';
+import { RoomInfoComponent } from './components/room-info/room-info.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { FocusDirective } from './directives/focus.directive';
     GamePageComponent,
     ModalPasswordComponent,
     FocusDirective,
+    RoomInfoComponent,
   ],
   imports: [
     BrowserModule,

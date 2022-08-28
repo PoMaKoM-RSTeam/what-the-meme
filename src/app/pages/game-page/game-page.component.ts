@@ -3,6 +3,9 @@ import { ModalPasswordService } from './../../components/modal-password/modal-pa
 import { RoomIdService } from './../../components/room-view/room-id.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Room } from 'src/app/models/room';
+import { Router } from '@angular/router';
+import { RoomsService } from 'src/app/services/rooms.service';
 
 @Component({
   selector: 'app-game-page',
@@ -17,9 +20,13 @@ export class GamePageComponent implements OnInit, OnDestroy {
   received: Message[] = [];
   sent: Message[] = [];
   currentRoomId = '';
-  constructor(public WebsocketService: WebsocketService, public roomIdService: RoomIdService, public modalPasswordService: ModalPasswordService) {
+
+  path = this.router.url;
+  room: Room;
+  isRoomReady = false;
+
+  constructor(public WebsocketService: WebsocketService,public roomIdService: RoomIdService, public modalPasswordService: ModalPasswordService, private router: Router, private roomService: RoomsService) {
     this.currentRoomId = this.roomIdService._id
-    
   }
 
 
@@ -43,6 +50,18 @@ export class GamePageComponent implements OnInit, OnDestroy {
     this.WebsocketService.sendMessage(message);
 
    sendForm.controls.message.reset();
+    const [, , id] = this.path.split('/');
+    const room = this.roomService.getRoom(id).subscribe(response => { this.initRoom(response) });
+  }
+
+  closeLobby() {
+    this.router.navigateByUrl('');
+  }
+
+  initRoom(roomInfo: Room) {
+    this.isRoomReady = true;
+    console.log(roomInfo)
+    this.room = roomInfo;
   }
  
 

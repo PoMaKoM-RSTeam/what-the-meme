@@ -1,0 +1,87 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 20%;
+}
+
+.header {
+  display: flex;
+  background-color: aqua;
+  height: 10vh;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.state {
+  text-transform: uppercase;
+  color: wheat;
+  font-size: 34px;
+  width: 60%;
+}
+
+.leave-lobby {
+  width: 20%;
+  text-align: center;
+}
+
+.timer {
+  text-transform: capitalize;
+  color: rebeccapurple;
+}
+
+.main {
+  display: flex;
+  background-color: brown;
+  width: 100%;
+  min-height: 70vh;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.chat-messages {
+  background-color: wheat;
+  height: 100%;
+}
+
+.chat-input {}
+
+.chat-send {
+  background-color: blue;
+  color: white;
+}
+
+.game-table {
+  background-color: violet;
+  width: 60%;
+}
+
+.score {
+  background-color: springgreen;
+  width: 20%;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: crimson;
+  height: 20vh;
+}
+
+.mem-slider {
+  background-color: darkcyan;
+  padding: 20px;
+  width: 100%;
+}

@@ -1,4 +1,4 @@
-import { Observable, tap } from 'rxjs';
+import { first, Observable, tap } from 'rxjs';
 import { Room } from './../models/room';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -23,5 +23,9 @@ export class RoomsService {
       .pipe(
         tap(room => this.rooms.push(room))
       )
+  }
+
+  getRoom(id: string): Observable<Room> {
+    return this.http.get<Room>(`http://localhost:5000/api/room/${id}`).pipe(first());
   }
 }
