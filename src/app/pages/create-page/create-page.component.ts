@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { DynamicChildLoaderDirective } from 'src/app/directives/dynamic-child-loader.directive';
 import { Room } from 'src/app/models/room';
@@ -25,7 +26,7 @@ export class CreatePageComponent implements OnInit {
   @ViewChild(DynamicChildLoaderDirective, { static: true })
   dynamicChild!: DynamicChildLoaderDirective;
 
-  constructor(private roomService: RoomsService) {
+  constructor(private roomService: RoomsService, private router: Router) {
 
   }
 
@@ -44,7 +45,7 @@ export class CreatePageComponent implements OnInit {
       this.room = this.form.value;
       this.room.users = [this.admin.name || 'Anton'];
       this.room.image = this.admin.image || '';
-      this.roomService.createRoom(this.room).subscribe();
+      this.roomService.createRoom(this.room).subscribe(response => { this.room._id = response._id; this.router.navigateByUrl(`/room/${this.room._id}`) });
     } else {
       this.showModal();
     }

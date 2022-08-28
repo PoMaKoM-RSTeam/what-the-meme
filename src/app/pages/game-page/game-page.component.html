@@ -1,5 +1,38 @@
-<div class="game-wrap">
-  <app-logo></app-logo>
-  <app-modal-password *ngIf="roomIdService.pass && (modalPasswordService.isVisible$| async)"></app-modal-password>
-</div>
+<app-modal-password *ngIf="roomIdService.pass && (modalPasswordService.isVisible$| async)"></app-modal-password>
 
+<div class="container" *ngIf="isRoomReady">
+  <header class="header">
+    <div class="logo" (click)="closeLobby()"> {{ room.name }}</div>
+    <div class="state">
+      state
+    </div>
+    <div class="timer">
+      30s
+    </div>
+    <div class="leave-lobby">Leave lobby</div>
+  </header>
+  <main class="main">
+    <aside class="chat">
+      <div class="chat-messages"></div>
+      <input type="text" class="chat-input" placeholder="Type text...">
+      <button class="chat-send">Send</button>
+    </aside>
+
+    <div class="game-table">
+
+    </div>
+
+    <aside class="score">
+      <div class="score-title">
+        Score
+      </div>
+      <ul></ul>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="mem-slider">
+
+    </div>
+  </footer>
+</div>
