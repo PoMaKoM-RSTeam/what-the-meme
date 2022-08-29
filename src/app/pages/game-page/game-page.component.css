@@ -37,7 +37,7 @@
 
 .main {
   display: flex;
-  background-color: brown;
+ 
   width: 100%;
   min-height: 70vh;
 }
@@ -45,22 +45,15 @@
 .chat {
   display: flex;
   flex-direction: column;
-  background-color: yellow;
+  
   width: 20%;
   justify-content: space-between;
 }
 
-.chat-messages {
-  background-color: wheat;
+.chat-app {
   height: 100%;
 }
 
-.chat-input {}
-
-.chat-send {
-  background-color: blue;
-  color: white;
-}
 
 .game-table {
   background-color: violet;

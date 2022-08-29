@@ -1,0 +1,16 @@
+<div class="chat-messages">
+  <div class="message-wrap" *ngFor="let chatMessage of WebsocketService.chatMessages">
+      <strong>{{chatMessage.user}}: </strong> 
+      <span>{{chatMessage.content}}</span>
+    
+  </div>
+</div>
+<form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+  <div class="chat-send row">
+     
+          <input type="text" class="form-control" name="message" id="input-message" ngModel>
+      <div class="col-2">
+          <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+  </div>
+</form>

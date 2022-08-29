@@ -25,6 +25,7 @@ import { GamePageComponent } from './pages/game-page/game-page.component';
 import { ModalPasswordComponent } from './components/modal-password/modal-password.component';
 import { FocusDirective } from './directives/focus.directive';
 import { RoomInfoComponent } from './components/room-info/room-info.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { RoomInfoComponent } from './components/room-info/room-info.component';
     ModalPasswordComponent,
     FocusDirective,
     RoomInfoComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

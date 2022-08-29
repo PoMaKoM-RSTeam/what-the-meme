@@ -12,20 +12,24 @@ import { RoomsService } from 'src/app/services/rooms.service';
 })
 export class GamePageComponent implements OnInit {
 
+
+  currentRoomId = '';
+
   path = this.router.url;
   room: Room;
   isRoomReady = false;
-  currentRoomId = '';
 
   constructor(public roomIdService: RoomIdService, public modalPasswordService: ModalPasswordService, private router: Router, private roomService: RoomsService) {
     this.currentRoomId = this.roomIdService._id
   }
 
+
   ngOnInit(): void {
+    
     const [, , id] = this.path.split('/');
     const room = this.roomService.getRoom(id).subscribe(response => { this.initRoom(response) });
   }
-
+ 
   closeLobby() {
     this.router.navigateByUrl('');
   }
@@ -35,5 +39,6 @@ export class GamePageComponent implements OnInit {
     console.log(roomInfo)
     this.room = roomInfo;
   }
+ 
 
 }
