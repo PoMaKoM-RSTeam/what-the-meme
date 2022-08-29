@@ -6,7 +6,7 @@ import { AnonymousSubject, Subject } from 'rxjs/internal/Subject';
 const CHAT_URL = "ws://localhost:5000";
 
 export interface Message {
-  source: string;
+  user?: string;
   content: string;
 }
 
@@ -26,7 +26,7 @@ export class WebsocketService {
     this.webSocket.onopen = (event) => {
       console.log('Open: ', event);
       this.webSocket.send(JSON.stringify({
-        source: '',
+        user: '',
         content: '',
         method: 'connection',
         id: this.roomIdService._id

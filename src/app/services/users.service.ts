@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { Observable, tap, first } from 'rxjs';
 import { User } from './../models/user';
 import { Injectable } from '@angular/core';
 
@@ -10,12 +10,18 @@ export class UsersService {
 
   constructor( private http: HttpClient ) { }
 
-  users: User[] = []
+  user: User = {}
 
   createUser(user: User): Observable<User> {
     return this.http.post<User>('http://localhost:5000/api/user', user)
     .pipe(
-      tap(user => this.users.push(user))
+      tap(user => this.user = user)
     )
   }
+  getUser(id?: string): Observable<User> {
+    return this.http.get<User>(`http://localhost:5000/api/user/${id}`).pipe(
+      tap(user => this.user = user)
+    );
+  }
+
 }
