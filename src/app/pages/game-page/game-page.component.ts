@@ -1,3 +1,4 @@
+import { WebsocketService } from './../../services/websocket.service';
 import { ModalPasswordService } from './../../components/modal-password/modal-password.service';
 import { RoomIdService } from './../../components/room-view/room-id.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,11 +18,13 @@ export class GamePageComponent implements OnInit {
   room: Room;
   isRoomReady = false;
 
-  constructor(public roomIdService: RoomIdService, public modalPasswordService: ModalPasswordService, private router: Router, private roomService: RoomsService) {
-    this.currentRoomId = this.roomIdService._id
+  constructor(public WebsocketService: WebsocketService, public roomIdService: RoomIdService, public modalPasswordService: ModalPasswordService, private router: Router, private roomService: RoomsService) {
+  
   }
 
   ngOnInit(): void {
+    this.currentRoomId = this.roomIdService._id
+    this.WebsocketService.openWebSocket(this.currentRoomId);
     const [, , id] = this.path.split('/');
     const room = this.roomService.getRoom(id).subscribe(response => { this.initRoom(response) });
   }

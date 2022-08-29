@@ -20,22 +20,18 @@ export class WebsocketService {
 
   constructor(private roomIdService: RoomIdService) { }
 
-  public openWebSocket(){
+  public openWebSocket(roomId: string){
     this.webSocket = new WebSocket('ws://localhost:5000');
-
     this.webSocket.onopen = (event) => {
-      console.log('Open: ', event);
-      this.webSocket.send(JSON.stringify({
-        user: '',
-        content: '',
-        method: 'connection',
-        id: this.roomIdService._id
-      }));
+    this.webSocket.send(JSON.stringify({id: roomId, method: 'connection'}));
     };
+
 
     this.webSocket.onmessage = (event) => {
       const chatMessageDto = JSON.parse(event.data);
-      this.chatMessages.push(chatMessageDto);
+      if (chatMessageDto.method === 'message') {
+        this.chatMessages.push(chatMessageDto);
+      }
     };
 
     this.webSocket.onclose = (event) => {

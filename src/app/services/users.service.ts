@@ -10,7 +10,7 @@ export class UsersService {
 
   constructor( private http: HttpClient ) { }
 
-  user: User = {}
+  user: User
 
   createUser(user: User): Observable<User> {
     return this.http.post<User>('http://localhost:5000/api/user', user)
