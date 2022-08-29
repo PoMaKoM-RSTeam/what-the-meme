@@ -15,7 +15,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   user: User = {}
   currentRoomId = '';
   constructor(public WebsocketService: WebsocketService, public roomIdService: RoomIdService, private usersService: UsersService) { 
-    this.currentRoomId = this.roomIdService._id
+    
   }
 
   sendMessage(sendForm: NgForm) {
@@ -32,9 +32,11 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.WebsocketService.openWebSocket();
+    this.currentRoomId = this.roomIdService._id
+    
     this.user = JSON.parse(localStorage.getItem('user') as string)
     this.usersService.getUser(this.user._id).subscribe(response => this.userName = response.name as string)
+
   }
   ngOnDestroy(): void {
     this.WebsocketService.closeWebSocket();

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
   chekName = false;
-  currentUser: User = {}
+  currentUser: User = { }
   constructor(public navigationService: NavigationService, private userService: UsersService, private router: Router) { }
   
 
@@ -19,11 +19,10 @@ export class NavigationComponent implements OnInit {
   }
 
   collectUser(link: string) {
+   
     if (this.navigationService.name) {
       this.router.navigateByUrl(link)
-      this.currentUser.name = this.navigationService.name;
-      this.currentUser.image = this.navigationService.image;
-      this.userService.createUser(this.currentUser).subscribe((response) => { localStorage.setItem('user', JSON.stringify(response)) });
+      this.userService.createUser(this.navigationService).subscribe((response) => { localStorage.setItem('user', JSON.stringify(response)) });
     }
     else {
       this.chekName = true;

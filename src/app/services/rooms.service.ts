@@ -11,7 +11,7 @@ export class RoomsService {
   constructor(private http: HttpClient) { }
 
   rooms: Room[] = []
-
+  room: Room 
   getAllRooms(): Observable<Room[]> {
     return this.http.get<Room[]>('http://localhost:5000/api/room?empty=true').pipe(
       tap(rooms => this.rooms = rooms)
@@ -27,5 +27,14 @@ export class RoomsService {
 
   getRoom(id: string): Observable<Room> {
     return this.http.get<Room>(`http://localhost:5000/api/room/${id}`).pipe(first());
+  }
+
+
+  updateRoom(id: string, room: Room): Observable<Room> {
+    console.log(room)
+    console.log(id)
+    return this.http.patch<Room>(`http://localhost:5000/api/room/${id}`, room).pipe(
+      tap(room => this.room = room)
+    );
   }
 }
