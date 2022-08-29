@@ -1,0 +1,8 @@
+<div class="container">
+  <p class="title">Score</p>
+  <div class="player" *ngFor="let player of players">
+    <img [src]="player.img" alt="" class="player-img">
+    <span class="player-name"> {{ player.name }}</span>
+    <span class="player-score"> {{ player.score }}</span>
+  </div>
+</div>
