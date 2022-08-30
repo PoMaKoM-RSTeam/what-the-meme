@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  color: rebeccapurple;
+  font-weight: bold;
+  align-items: center;
+}
+
+.active-state {
+  min-width: 405px;
+  font-size: 30px;
+}
+
+.action-button {
+  color: white;
+  background-color: #382756;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  min-width: 48px;
+  padding: 7px 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 2px 2px  #5e4290;
+}
+
+.action-button:hover {
+  background-color: #5e4290;
+}
+
+.action-button:active {
+  transform: translate(1%, 5%);
+  box-shadow: none;
+}
+
+.timer {
+  font-size: 34px;
+}

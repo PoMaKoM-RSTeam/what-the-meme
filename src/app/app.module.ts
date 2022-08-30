@@ -27,6 +27,7 @@ import { FocusDirective } from './directives/focus.directive';
 import { RoomInfoComponent } from './components/room-info/room-info.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { ScoreComponent } from './components/score/score.component';
+import { StateComponent } from './components/state/state.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ScoreComponent } from './components/score/score.component';
     RoomInfoComponent,
     ChatComponent,
     ScoreComponent,
+    StateComponent,
   ],
   imports: [
     BrowserModule,
