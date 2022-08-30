@@ -31,8 +31,7 @@ export class RoomsService {
 
 
   updateRoom(id: string, room: Room): Observable<Room> {
-    console.log(room)
-    console.log(id)
+
     return this.http.patch<Room>(`http://localhost:5000/api/room/${id}`, room).pipe(
       tap(room => this.room = room)
     );

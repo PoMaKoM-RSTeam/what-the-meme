@@ -1,0 +1,19 @@
+.meme-container {
+  display: flex;
+  gap: 5px;
+}
+
+
+.meme-img {
+  width: 100%;
+}
+
+.memes-card {
+  background-color: #f1eff0;
+  width: 244px;
+  cursor: pointer;
+}
+
+.drag-box {
+  cursor: pointer;
+}
