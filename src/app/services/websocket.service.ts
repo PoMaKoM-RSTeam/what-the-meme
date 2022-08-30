@@ -22,7 +22,7 @@ export class WebsocketService {
 
   public openWebSocket(roomId: string){
     this.webSocket = new WebSocket('ws://localhost:5000');
-    this.webSocket.onopen = (event) => {
+    this.webSocket.onopen = () => {
     this.webSocket.send(JSON.stringify({id: roomId, method: 'connection'}));
     };
 

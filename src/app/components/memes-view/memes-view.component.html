@@ -1,0 +1,21 @@
+
+<div
+    cdkDropList
+    id="list-1"
+    #todoList="cdkDropList"
+    [cdkDropListData]="memes"
+    cdkDropListConnectedTo="list-2"
+    class="meme-container"
+    (cdkDropListDropped)="memesViewService.drop($event)"
+    
+  >
+  <div class="example-box" *ngFor="let meme of memes let i = index;" cdkDrag class="meme-wrap">
+      <mat-card class="memes-card">
+      <img [src]="'https://agile-reef-40611.herokuapp.com/'+meme.link" [alt]="'Meme - '+i" class="meme-img">
+      </mat-card>
+  </div>
+</div>
+
+
+
+   

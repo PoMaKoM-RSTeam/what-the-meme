@@ -27,7 +27,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     }
 
     this.WebsocketService.sendMessage(message);
-
+    this.WebsocketService.closeWebSocket();
     sendForm.controls.message.reset();
   }
 
@@ -39,6 +39,6 @@ export class ChatComponent implements OnInit, OnDestroy {
 
   }
   ngOnDestroy(): void {
-    this.WebsocketService.closeWebSocket();
+   
   }
 }
