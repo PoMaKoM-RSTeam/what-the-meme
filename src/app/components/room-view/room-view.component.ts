@@ -24,12 +24,8 @@ export class RoomViewComponent implements OnInit {
     {
       this.roomIdService._id = roomId;
       this.roomIdService.pass = roomPass;
-      console.log(this.room)
-      this.roomsService.updateRoom(roomId, this.room).subscribe(() => { this.room.users.push(JSON.parse(localStorage.getItem('user')!).name)
-
-      console.log(this.roomsService.rooms)
-    })
-      
+      this.room.users.push(JSON.parse(localStorage.getItem('user')!).name)
+      this.roomsService.updateRoom(roomId, this.room).subscribe()
       this.modalPasswordService.open();
     }
     this.router.navigate(['room/' + roomId])
