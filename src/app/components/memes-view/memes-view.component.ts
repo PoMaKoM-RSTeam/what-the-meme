@@ -12,11 +12,11 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 export class MemesViewComponent implements OnInit {
 
   constructor(public memeService: MemesService, public memesViewService: MemesViewService) { }
-  memes: Meme[]
+  
   ngOnInit(): void {
     this.memeService.getAllMemes().subscribe((memes) => {
-      this.memes = memes
-      this.memes = this.getRandomArrayElements(this.memes, 5)
+      this.memesViewService.memes = memes
+      this.memesViewService.memes = this.getRandomArrayElements(this.memesViewService.memes, 5)
     })
   }
   
