@@ -29,11 +29,6 @@ export class MemesViewService {
     )
   }
 
-  dblclickMove(event: MouseEvent, ...targets: string[]) {
-    this[targets[0]] = [
-      ...this[targets[1]].splice(this[targets[1]].indexOf(event.target.), 1), 
-      ...this[targets[0]]
-      ];
-  }
+ 
   
 }
