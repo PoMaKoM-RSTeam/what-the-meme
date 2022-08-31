@@ -27,6 +27,7 @@ import { FocusDirective } from './directives/focus.directive';
 import { RoomInfoComponent } from './components/room-info/room-info.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { ScoreComponent } from './components/score/score.component';
+import { StateComponent } from './components/state/state.component';
 import { MemesViewComponent } from './components/memes-view/memes-view.component';
 import {MatCardModule} from '@angular/material/card';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -51,6 +52,7 @@ import { TableViewComponent } from './components/table-view/table-view.component
     RoomInfoComponent,
     ChatComponent,
     ScoreComponent,
+    StateComponent,
     MemesViewComponent,
     TableViewComponent,
   ],
