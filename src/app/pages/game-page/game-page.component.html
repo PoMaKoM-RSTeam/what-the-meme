@@ -1,6 +1,6 @@
 <div class="game-wrap">
 
-  <app-modal-password *ngIf="roomIdService.pass && (modalPasswordService.isVisible$| async)"></app-modal-password>
+  <app-modal-password *ngIf="checkPass && roomIdService.pass && (modalPasswordService.isVisible$| async)"></app-modal-password>
   <div class="container" *ngIf="isRoomReady">
     <header class="header">
       <app-logo class="logo"></app-logo>

@@ -21,8 +21,12 @@ export class NavigationComponent implements OnInit {
   collectUser(link: string) {
    
     if (this.navigationService.name) {
+      if (localStorage.getItem('user')) {
+        this.userService.updateUser(JSON.parse(localStorage.getItem('user')!)._id, this.navigationService).subscribe((response) => { localStorage.setItem('user', JSON.stringify(response)) });
+      } else {
+        this.userService.createUser(this.navigationService).subscribe((response) => { localStorage.setItem('user', JSON.stringify(response)) });
+      }
       this.router.navigateByUrl(link)
-      this.userService.createUser(this.navigationService).subscribe((response) => { localStorage.setItem('user', JSON.stringify(response)) });
     }
     else {
       this.chekName = true;
