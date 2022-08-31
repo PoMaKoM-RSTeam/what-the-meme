@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UsersService {
+ 
 
   constructor( private http: HttpClient ) { }
 
@@ -24,4 +25,9 @@ export class UsersService {
     );
   }
 
+  updateUser(id: string, user: User): Observable<User> {
+    return this.http.patch<User>(`http://localhost:5000/api/user/${id}`, user).pipe(
+      tap(user => this.user = user)
+    );
+  }
 }

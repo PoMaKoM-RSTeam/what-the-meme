@@ -43,8 +43,6 @@ export class MemesViewService {
       this.currentMeme = [...this.memes.splice(this.memes.indexOf(activeMeme),1)]
     }
     
-    
-    console.log(this.memes)
   }
   
 }

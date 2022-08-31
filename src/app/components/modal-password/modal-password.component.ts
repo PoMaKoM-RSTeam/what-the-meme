@@ -12,7 +12,7 @@ export class ModalPasswordComponent implements OnInit {
 
   constructor(public modalPasswordService: ModalPasswordService, public roomIdService: RoomIdService) { }
 
-  chekPass = true
+  checkPass = true
 
   form = new FormGroup({
     pass: new FormControl<string>('', [
@@ -28,11 +28,13 @@ export class ModalPasswordComponent implements OnInit {
 
   checkPassword() {
     if (this.roomIdService.pass === this.form.value.pass) {
-      this.chekPass = true
+      this.checkPass = true
+      sessionStorage.setItem('checkPass', '')
       this.modalPasswordService.close()
     }
     else {
-      this.chekPass = false
+      this.checkPass = false
+      sessionStorage.setItem('checkPass', 'true')
     }
 
   }

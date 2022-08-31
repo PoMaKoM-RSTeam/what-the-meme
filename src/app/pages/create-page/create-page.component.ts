@@ -43,7 +43,7 @@ export class CreatePageComponent implements OnInit {
     if (this.form.valid) {
       this.admin = JSON.parse(localStorage.getItem('user') || this.anon)
       this.room = this.form.value;
-      this.room.users = [this.admin.name || 'Anton'];
+      this.room.users = [this.admin];
       this.room.image = this.admin.image || '';
       this.roomService.createRoom(this.room).subscribe(response => { this.room._id = response._id; this.router.navigateByUrl(`/room/${this.room._id}`) });
     } else {

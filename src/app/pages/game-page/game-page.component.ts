@@ -1,7 +1,7 @@
 import { WebsocketService } from './../../services/websocket.service';
 import { ModalPasswordService } from './../../components/modal-password/modal-password.service';
 import { RoomIdService } from './../../components/room-view/room-id.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Room } from 'src/app/models/room';
 import { Router } from '@angular/router';
 import { RoomsService } from 'src/app/services/rooms.service';
@@ -11,18 +11,24 @@ import { RoomsService } from 'src/app/services/rooms.service';
   templateUrl: './game-page.component.html',
   styleUrls: ['./game-page.component.css']
 })
-export class GamePageComponent implements OnInit {
+export class GamePageComponent implements OnInit, OnDestroy {
 
   currentRoomId = '';
   path = this.router.url;
   room: Room;
   isRoomReady = false;
-
+  checkPass: string
   constructor(public WebsocketService: WebsocketService, public roomIdService: RoomIdService, public modalPasswordService: ModalPasswordService, private router: Router, private roomService: RoomsService) {
   
   }
 
   ngOnInit(): void {
+    if (sessionStorage.getItem('checkPass')===null) {
+      this.checkPass = 'true'
+    }
+    else {
+      this.checkPass = sessionStorage.getItem('checkPass') as string
+    }
     this.currentRoomId = this.roomIdService._id
     this.WebsocketService.openWebSocket(this.currentRoomId);
     const [, , id] = this.path.split('/');
@@ -33,5 +39,11 @@ export class GamePageComponent implements OnInit {
     this.isRoomReady = true;
     console.log(roomInfo)
     this.room = roomInfo;
+    this.roomIdService.pass = roomInfo.pass
+  }
+
+  ngOnDestroy(): void {
+    this.WebsocketService.closeWebSocket();
+    sessionStorage.removeItem('checkPass')
   }
 }
