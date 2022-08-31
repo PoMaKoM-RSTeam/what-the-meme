@@ -2,6 +2,7 @@
   <app-logo></app-logo>
   <div class="join-container">
     <div *ngIf="roomsService.rooms" class="rooms-wrap">
+      <div class="rooms-page-title">Комнаты</div>
       <app-room-view
       *ngFor="let room of roomsService.rooms | paginate: { itemsPerPage: 5, currentPage: page } let i = index; "
         [room]="room"
