@@ -1,12 +1,20 @@
 <div class="room-container">
-  <div class="room-img__wrap">
-    <img [src]="room.image" alt="Room Image" class="room-img">
+  <div class="room-name__container">
+     <div class="room-img__wrap">
+      <img [src]="room.image" alt="Room Image" class="room-img">
+    </div>
+    <div class="room-name__wrap">
+      {{ room.name }}
+    </div>
   </div>
+ 
   <div class="room-users__wrap">
-    {{ room.users.length }}/{{ room.members }}
+    <div class="room-users__info">{{ room.users.length }}/{{ room.members }}</div>
+    <div class="room-users__icon"><mat-icon class="users__icon">people</mat-icon></div>
+    
   </div>
   <div class="room-join__wrap">
     <mat-icon *ngIf="room.pass" class="lock-icon">lock</mat-icon>
-    <button (click)="openRoom(room.pass, room._id)" class="room-join__link">Join room</button>
+    <button (click)="openRoom(room.pass, room._id)" class="room-join__link">ЗАЙТИ</button>
   </div>
 </div>
