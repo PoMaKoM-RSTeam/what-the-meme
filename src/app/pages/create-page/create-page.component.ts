@@ -68,6 +68,7 @@ export class CreatePageComponent implements OnInit {
     const modal = this.dynamicChild.viewContainerRef.createComponent(ModalComponent);
     modal.instance.title = 'Create room error';
     modal.instance.text = 'Please enter correct data';
+    modal.instance.actionButton = false;
     modal.instance.close.subscribe(() => {
       this.dynamicChild.viewContainerRef.clear();
     })
