@@ -9,6 +9,9 @@ export class ModalComponent{
 
   @Input() title = '';
   @Input() text = ''
+  @Input() actionButton = false;
+  @Input() actionButtonText = 'Копировать ссылку';
+  @Output() copyLink = new EventEmitter();
   @Output() close = new EventEmitter<void>()
 
 }

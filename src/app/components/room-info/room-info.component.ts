@@ -4,6 +4,7 @@ import { DynamicChildLoaderDirective } from 'src/app/directives/dynamic-child-lo
 import { Room } from 'src/app/models/room';
 import { RoomsService } from 'src/app/services/rooms.service';
 import { ModalComponent } from '../modal/modal.component';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-room-info',
@@ -19,7 +20,7 @@ export class RoomInfoComponent implements OnInit {
   @ViewChild(DynamicChildLoaderDirective, { static: true })
   dynamicChild!: DynamicChildLoaderDirective;
 
-  constructor(private roomsService: RoomsService, private router: Router) { }
+  constructor(private roomsService: RoomsService, private router: Router, private clipboard: Clipboard) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +30,7 @@ export class RoomInfoComponent implements OnInit {
       this.roomInfo = response;
       let text = `Room name: ${response.name}\n`;
       if (response.pass) text += ` Room pass: ${response.pass}\n`;
-      text += ` Room link: ${this.router.url}`;
+      text += ` Max players: ${response.members}`;
       this.showModal(text);
     })
 
@@ -39,6 +40,12 @@ export class RoomInfoComponent implements OnInit {
     const modal = this.dynamicChild.viewContainerRef.createComponent(ModalComponent);
     modal.instance.title = 'Room info';
     modal.instance.text = text.trim();
+    modal.instance.actionButtonText = 'Копровать ссылку'
+    modal.instance.actionButton = true;
+    modal.instance.copyLink.subscribe(() => {
+      this.clipboard.copy(this.router.url);
+      modal.instance.actionButtonText = 'Ссылка скопированна';
+    })
     modal.instance.close.subscribe(() => {
       this.dynamicChild.viewContainerRef.clear();
     })
