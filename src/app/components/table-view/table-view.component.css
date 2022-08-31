@@ -1,0 +1,24 @@
+.table-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+.table-situation__wrap {
+  min-height: 350px;
+  width: 250px;
+  background-color: aliceblue;
+}
+.meme-container {
+  min-height: 244px;
+  width: 350px;
+  background-color: aliceblue;
+}
+.meme-img {
+  width: 100%;
+}
+.meme-card {
+  cursor: pointer;
+}

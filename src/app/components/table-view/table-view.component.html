@@ -1,0 +1,24 @@
+<div class="table-wrap">
+  <div class="table-situation__wrap"></div>
+  <div class="table-memes__wrap">
+    <div class="table-memes__current">
+      <div
+        id="list-2"
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="memesViewService.currentMeme"
+        cdkDropListConnectedTo="list-1"
+        class="meme-container"
+        (cdkDropListDropped)="memesViewService.drop($event)"
+        [cdkDropListEnterPredicate]="memesViewService.returneOneItem"
+      >
+        <div  *ngFor="let meme of memesViewService.currentMeme let i = index;" cdkDrag class="meme-wrap">
+          <mat-card class="meme-card">
+          <img [src]="'https://agile-reef-40611.herokuapp.com/'+meme.link" [alt]="'Meme - '+i" class="meme-img">
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

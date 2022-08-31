@@ -69,12 +69,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: crimson;
-  height: 20vh;
 }
 
 .mem-slider {
-  background-color: darkcyan;
   padding: 20px;
   width: 100%;
 }
