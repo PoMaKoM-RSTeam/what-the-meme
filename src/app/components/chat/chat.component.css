@@ -1,51 +1,80 @@
 .chat-messages {
-  background-color: #fff;
   height: 400px;
-  border: 3px solid #000;
-  border-radius: 10px;
   overflow-y: auto;
+  background-color: #1C1A21;
+  border-radius: 8px;
 }
 
 .message-wrap {
   padding-left: 10px;
-  padding-bottom: 3px;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  line-height: 15pt;
+}
+
+.message-user {
+  font-size: 14px;
+  color: #DDDDDD;
+}
+.message-content {
+  font-size: 15px;
+  color: #ffff;
 }
 
 .chat-send {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 67px;
+  background-color: #2e2b36;
+  border-radius: 0 0 8px 8px;
+  border: 1px solid #767185;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  gap: 5px;
 }
-.form-control {
+.message-field {
   display: block;
-  width: 100%;
-  height: calc(2.25rem + 2px);
-  margin-top: 5px;
+  width: 225px;
+  height: calc(2.8rem + 2px);
   padding: 0.375rem 0.75rem;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
+  color: #ffff;
+  background-color: #2e2b36;
   background-clip: padding-box;
-  border: 1px solid #000;
-  border-radius: 0.25rem;
+  border: 1px solid #767185;
+  border-radius: 16px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.message-field::placeholder {
+  color: #81759E;
+  font-size: 1em;
+}
+.message-field:focus {
+  outline: none;
+  border-color: #58C2BD;
+}
 .btn-primary {
-  width: 100px;
-  padding: 5px;
-  font-size: 1rem;
-  margin: 4px 2px;
-  border-radius: 39px;
-  border-style: solid;
-  border-width: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 16px;
   text-align: center;
   text-decoration: none;
-  border-color: #1295df;
-  color: #382756;
-  background-color: #ffff;
+  border: 1px solid #767185;
+  background-color: #493964;
   cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #524072;
+}
+.mat-icon {
+  color: #ffff;
 }

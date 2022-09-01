@@ -5,6 +5,10 @@
   align-items: center;
   row-gap: 15px;
 }
+.logo-wrap {
+  margin-left: 20px;
+  padding-top: 20px;
+}
 .rooms-wrap {
   display: flex;
   flex-direction: column;
