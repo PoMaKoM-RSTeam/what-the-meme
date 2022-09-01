@@ -28,9 +28,9 @@ export class RoomInfoComponent implements OnInit {
   openRoomInfo() {
     this.roomsService.getRoom(this.roomId).subscribe((response) => {
       this.roomInfo = response;
-      let text = `Room name: ${response.name}\n`;
-      if (response.pass) text += ` Room pass: ${response.pass}\n`;
-      text += ` Max players: ${response.members}`;
+      let text = `Название: ${response.name}\n`;
+      if (response.pass) text += ` Пароль: ${response.pass}\n`;
+      text += ` Максимум участников: ${response.members}`;
       this.showModal(text);
     })
 
@@ -38,7 +38,7 @@ export class RoomInfoComponent implements OnInit {
   }
   private showModal(text: string) {
     const modal = this.dynamicChild.viewContainerRef.createComponent(ModalComponent);
-    modal.instance.title = 'Room info';
+    modal.instance.title = 'О комнате';
     modal.instance.text = text.trim();
     modal.instance.actionButtonText = 'Копровать ссылку'
     modal.instance.actionButton = true;

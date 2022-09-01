@@ -13,7 +13,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  background: #fff;
+  background: #2E2B36;
   left: 50%;
   top: 10%;
   transform: translate(-50%, 0);
@@ -35,8 +35,8 @@
 }
 
 .modal-text {
-  font-size: 22px;
-  color: #382756;
+  font-size: 24px;
+  color: #FFFFFF;
   padding: 0 10px;
   white-space: pre;
   text-align: left;
@@ -50,12 +50,12 @@
   font-weight: bold;
   padding: 10px;
   margin: 0 20px;
-  background-color: #BF437A;
+  background-color: #C25284;
   cursor: pointer;
   color: white;
   width: 90%;
 }
 
 .modal-button:hover {
-  background-color: #e04e90;
+  background-color: #98446a;
 }
