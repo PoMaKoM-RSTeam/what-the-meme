@@ -51,16 +51,16 @@ export class CreatePageComponent implements OnInit {
     }
   }
 
-  changeGameMode(mode: String) {
-    if (mode === 'private') {
+  changePrivateMode() {
+    if (!this.privateMode) {
       this.form.controls.pass.addValidators([Validators.required, Validators.minLength(1)]);
       this.form.controls.pass.setValue('');
       this.privateMode = true;
-    }
-    if (mode === 'public') {
+
+    } else {
       this.form.controls.pass.clearValidators();
-      this.privateMode = false;
       this.form.controls.pass.setValue('');
+      this.privateMode = false;
     }
   }
 
