@@ -1,5 +1,9 @@
-<div class="table-wrap">
-  <div class="table-situation__wrap"></div>
+<div class="table-container">
+  <div class="table-title">Игровое поле</div>
+  <div class="table-wrap">
+    <div class="table-situation__wrap">
+
+    </div>
   <div class="table-memes__wrap">
     <div class="table-memes__current">
       <div
@@ -13,12 +17,14 @@
         [cdkDropListEnterPredicate]="memesViewService.returneOneItem"
       >
         <div  *ngFor="let meme of memesViewService.currentMeme let i = index;" cdkDrag class="meme-wrap">
-          <mat-card class="meme-card">
+         
           <img [src]="'https://agile-reef-40611.herokuapp.com/'+meme.link" [alt]="'Meme - '+i" class="meme-img">
-          </mat-card>
+ 
         </div>
       </div>
     </div>
   </div>
+  </div>
+  
 
 </div>
