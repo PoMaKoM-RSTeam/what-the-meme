@@ -1,6 +1,10 @@
 .meme-container {
   display: flex;
   gap: 5px;
+  background-color: #2E2B36;
+  padding: 20px 16px;
+  border: 1px solid #767185;
+  border-radius: 8px;
 }
 
 
@@ -9,9 +13,14 @@
 }
 
 .memes-card {
-  background-color: #f1eff0;
-  width: 244px;
+  background-color: #4A4557;
+  width: 267px;
+  height: 100%;
   cursor: pointer;
+  padding: 4px;
+}
+.memes-card img{
+  height: 100%;
 }
 
 .drag-box {
