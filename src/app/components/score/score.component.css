@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  background: #1C1A21;
+  background: #2E2B36;
   border: 1px solid #767185;
   border-radius: 8px;
   height: 100%;
@@ -13,8 +13,9 @@
   display: flex;
   align-items: flex-start;
   padding: 16px 12px;
-  height: 40px;
+  height: 53px;
   border-bottom: 1px solid #767185;
+  background: #2E2B36;
 }
 
 .title-text {
@@ -82,7 +83,7 @@
   border-top: 1px solid #767185;
   justify-content: space-between;
   padding: 0px 10px;
-  height: 40px;
+  height: 53px;
   margin-top: auto;
   justify-self: flex-end;
 }
