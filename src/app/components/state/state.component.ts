@@ -1,3 +1,6 @@
+import { RoomIdService } from './../room-view/room-id.service';
+import { UsersService } from './../../services/users.service';
+import { WebsocketService } from './../../services/websocket.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,12 +16,20 @@ export class StateComponent implements OnInit {
   buttonText = 'Начать';
   stateText = 'Ожидание игроков';
 
-  constructor() { }
+  constructor(public WebsocketService: WebsocketService, public roomIdService: RoomIdService, private usersService: UsersService) { }
 
   ngOnInit(): void {
     this.waitingText();
   }
-
+  startGame() {
+    const message = {
+      content: '',
+      method: 'start',
+      id: this.roomIdService._id
+    }
+    this.WebsocketService.sendMessage(message);
+    this.activeButton = false;
+  }
   waitingText() {
     setInterval(() => {
       switch(this.stateText) {

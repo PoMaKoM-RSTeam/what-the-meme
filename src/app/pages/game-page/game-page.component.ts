@@ -23,16 +23,23 @@ export class GamePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    if (sessionStorage.getItem('checkPass')===null) {
-      this.checkPass = 'true'
+    if (!localStorage.getItem('user')) {
+      this.router.navigateByUrl('/');
+      console.log('test')
     }
     else {
-      this.checkPass = sessionStorage.getItem('checkPass') as string
+      if (sessionStorage.getItem('checkPass')===null) {
+      this.checkPass = 'true'
+      }
+      else {
+        this.checkPass = sessionStorage.getItem('checkPass') as string
+      }
+      this.currentRoomId = this.roomIdService._id
+      this.WebsocketService.openWebSocket(this.currentRoomId);
+      const [, , id] = this.path.split('/');
+      const room = this.roomService.getRoom(id).subscribe(response => { this.initRoom(response) });
     }
-    this.currentRoomId = this.roomIdService._id
-    this.WebsocketService.openWebSocket(this.currentRoomId);
-    const [, , id] = this.path.split('/');
-    const room = this.roomService.getRoom(id).subscribe(response => { this.initRoom(response) });
+    
   }
 
   initRoom(roomInfo: Room) {
@@ -43,7 +50,10 @@ export class GamePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.WebsocketService.closeWebSocket();
-    sessionStorage.removeItem('checkPass')
+    if (localStorage.getItem('user')) {
+      this.WebsocketService.closeWebSocket();
+      sessionStorage.removeItem('checkPass')
+    } 
+    
   }
 }
