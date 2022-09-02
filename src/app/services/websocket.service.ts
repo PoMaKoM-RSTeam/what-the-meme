@@ -1,14 +1,12 @@
+import { Message } from '../models/message';
 import { RoomIdService } from './../components/room-view/room-id.service';
 import { Injectable } from '@angular/core';
-import { map, Observable, Observer } from 'rxjs';
-import { AnonymousSubject, Subject } from 'rxjs/internal/Subject';
+
+
 
 const CHAT_URL = "ws://localhost:5000";
 
-export interface Message {
-  user?: string;
-  content: string;
-}
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +15,10 @@ export class WebsocketService {
 
     webSocket: WebSocket;
   chatMessages: Message[] = [];
+  situationMessgae: Message = {
+    content: '',
+    method: 'situation'
+  };
 
   constructor(private roomIdService: RoomIdService) { }
 
@@ -28,13 +30,19 @@ export class WebsocketService {
 
 
     this.webSocket.onmessage = (event) => {
-      const chatMessageDto = JSON.parse(event.data);
-      if (chatMessageDto.method === 'message') {
-        this.chatMessages.push(chatMessageDto);
+      const MessageDto = JSON.parse(event.data);
+      if (MessageDto.method === 'message') {
+        this.chatMessages.push(MessageDto);
+      }
+      console.log(event)
+      if (MessageDto.method === 'situation') {
+        this.situationMessgae = MessageDto
+        console.log(this.situationMessgae)
       }
     };
 
     this.webSocket.onclose = (event) => {
+      this.chatMessages = []
       console.log('Close: ', event);
     };
   }

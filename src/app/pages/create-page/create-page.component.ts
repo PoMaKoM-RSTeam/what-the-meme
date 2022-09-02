@@ -1,3 +1,4 @@
+import { RoomIdService } from './../../components/room-view/room-id.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -26,7 +27,7 @@ export class CreatePageComponent implements OnInit {
   @ViewChild(DynamicChildLoaderDirective, { static: true })
   dynamicChild!: DynamicChildLoaderDirective;
 
-  constructor(private roomService: RoomsService, private router: Router) {
+  constructor(private roomService: RoomsService, private router: Router, public roomIdService: RoomIdService) {
 
   }
 
@@ -45,7 +46,10 @@ export class CreatePageComponent implements OnInit {
       this.room = this.form.value;
       this.room.users = [this.admin];
       this.room.image = this.admin.image || '';
-      this.roomService.createRoom(this.room).subscribe(response => { this.room._id = response._id; this.router.navigateByUrl(`/room/${this.room._id}`) });
+      this.roomService.createRoom(this.room).subscribe(response => { 
+        this.room._id = response._id; this.router.navigateByUrl(`/room/${this.room._id}`) 
+        this.roomIdService._id = this.room._id!
+    });
     } else {
       this.showModal();
     }
