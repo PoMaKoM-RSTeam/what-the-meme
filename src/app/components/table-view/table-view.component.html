@@ -2,7 +2,9 @@
   <div class="table-title">Игровое поле</div>
   <div class="table-wrap">
     <div class="table-situation__wrap">
-
+      <div *ngIf="this.websocketService.situationMessgae.content" class="table-situation">
+        {{ this.websocketService.situationMessgae.content }}
+      </div>
     </div>
   <div class="table-memes__wrap">
     <div class="table-memes__current">
