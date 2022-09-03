@@ -14,4 +14,7 @@ export class JoinPageComponent implements OnInit {
     this.roomsService.getAllRooms().subscribe()
   }
 
+  updateRooms() {
+    this.roomsService.getAllRooms().subscribe()
+  }
 }
