@@ -1,28 +1,29 @@
-<div class="game-wrap">
+<div @gamePage class="game-wrap">
 
-  <app-modal-password *ngIf="checkPass && roomIdService.pass && (modalPasswordService.isVisible$| async)"></app-modal-password>
+  <app-modal-password *ngIf="checkPass && roomIdService.pass && (modalPasswordService.isVisible$| async)">
+  </app-modal-password>
   <div class="container" *ngIf="isRoomReady">
-    <header class="header">
+    <header class="header" @headerInit>
       <app-logo class="logo"></app-logo>
       <app-state class="state"></app-state>
       <app-room-info class="leave-lobby"></app-room-info>
     </header>
     <main class="main">
-      <aside class="chat">
+      <aside class="chat" @chatInit>
         <app-chat class="chat-app"></app-chat>
       </aside>
 
-      <div class="game-table">
+      <div class="game-table" @gameTableInit>
         <app-table-view></app-table-view>
       </div>
 
-      <div class="score-table">
+      <div class="score-table" @scoreInit>
         <app-score class="score"></app-score>
       </div>
 
     </main>
 
-    <footer class="footer">
+    <footer class="footer" @memeInit>
       <div class="mem-slider">
         <app-memes-view></app-memes-view>
       </div>

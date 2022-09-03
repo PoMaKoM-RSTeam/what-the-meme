@@ -5,6 +5,19 @@
   border-radius: 8px;
 }
 
+.chat-messages::-webkit-scrollbar {
+  width: 10px;
+  background-color: #515151;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #767185;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background-color: #81759E;
+}
+
 .message-wrap {
   padding-left: 10px;
   padding-top: 15px;
