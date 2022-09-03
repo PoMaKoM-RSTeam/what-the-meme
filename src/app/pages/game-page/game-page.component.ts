@@ -5,11 +5,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Room } from 'src/app/models/room';
 import { Router } from '@angular/router';
 import { RoomsService } from 'src/app/services/rooms.service';
+import { chatInit, gamePageAnimation, gameTableInit, headerInit, memeInit, scoreInit } from './game-page-animations';
 
 @Component({
   selector: 'app-game-page',
   templateUrl: './game-page.component.html',
-  styleUrls: ['./game-page.component.css']
+  styleUrls: ['./game-page.component.css'],
+  animations: [gamePageAnimation, chatInit, scoreInit, headerInit, memeInit, gameTableInit]
 })
 export class GamePageComponent implements OnInit, OnDestroy {
 
@@ -19,7 +21,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
   isRoomReady = false;
   checkPass: string
   constructor(public WebsocketService: WebsocketService, public roomIdService: RoomIdService, public modalPasswordService: ModalPasswordService, private router: Router, private roomService: RoomsService) {
-  
+
   }
 
   ngOnInit(): void {
@@ -28,8 +30,8 @@ export class GamePageComponent implements OnInit, OnDestroy {
       console.log('test')
     }
     else {
-      if (sessionStorage.getItem('checkPass')===null) {
-      this.checkPass = 'true'
+      if (sessionStorage.getItem('checkPass') === null) {
+        this.checkPass = 'true'
       }
       else {
         this.checkPass = sessionStorage.getItem('checkPass') as string
@@ -39,7 +41,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
       const [, , id] = this.path.split('/');
       const room = this.roomService.getRoom(id).subscribe(response => { this.initRoom(response) });
     }
-    
+
   }
 
   initRoom(roomInfo: Room) {
@@ -53,7 +55,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
     if (localStorage.getItem('user')) {
       this.WebsocketService.closeWebSocket();
       sessionStorage.removeItem('checkPass')
-    } 
-    
+    }
+
   }
 }

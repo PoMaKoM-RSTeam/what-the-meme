@@ -1,13 +1,14 @@
 .container {
   max-width: 1400px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 
 .header {
   display: flex;
   background-color: #2e2b36;
-  height: 90px;
+  height: 70px;
   margin-top: 14px;
   align-items: center;
   justify-content: space-between;
@@ -15,6 +16,7 @@
   width: 100%;
   border-radius: 8px;
   border: 1px solid #767185;
+  position: relative;
 }
 
 .state {
@@ -45,6 +47,7 @@
   display: flex;
   width: 300px;
   justify-content: space-between;
+  position: relative;
 }
 
 .chat-app {
@@ -52,6 +55,7 @@
   width: 100%;
   border: 1px solid #767185;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 
@@ -60,6 +64,7 @@
   border: 1px solid #767185;
   border-radius: 8px;
   margin: 0 16px;
+  overflow-y: hidden;
 }
 
 .score-table {
@@ -67,6 +72,7 @@
   background: #2E2B36;
   border: 1px solid #767185;
   border-radius: 8px;
+  position: relative;
 }
 
 .score {
@@ -78,6 +84,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 14px;
+  position: relative;
 }
 
 .mem-slider {
