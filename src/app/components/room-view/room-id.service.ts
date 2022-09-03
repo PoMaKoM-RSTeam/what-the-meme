@@ -7,4 +7,6 @@ export class RoomIdService {
 
   _id: string =''
   pass: string = ''
+  roomState: string = ''
+  gameState: string = ''
 }

@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { DynamicChildLoaderDirective } from 'src/app/directives/dynamic-child-loader.directive';
 import { Room } from 'src/app/models/room';
-import { User } from 'src/app/models/user';
+import { User, RoomUser } from 'src/app/models/user';
 import { RoomsService } from 'src/app/services/rooms.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class CreatePageComponent implements OnInit {
   form: FormGroup;
   privateMode = false;
   room: Room;
-  admin: User;
+  admin: RoomUser;
   anon = JSON.stringify({
     name: 'Anon',
     image: './assets/images/avatar-images/baby-yoda.jpg'
@@ -46,6 +46,7 @@ export class CreatePageComponent implements OnInit {
       this.room = this.form.value;
       this.room.users = [this.admin];
       this.room.image = this.admin.image || '';
+      this.room.admin = this.admin._id!
       this.roomService.createRoom(this.room).subscribe(response => { 
         this.room._id = response._id; this.router.navigateByUrl(`/room/${this.room._id}`) 
         this.roomIdService._id = this.room._id!

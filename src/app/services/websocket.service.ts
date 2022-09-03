@@ -1,3 +1,4 @@
+import { MemesViewService } from './../components/memes-view/memes-view.service';
 import { UsersService } from './users.service';
 import { Message } from '../models/message';
 import { RoomIdService } from './../components/room-view/room-id.service';
@@ -24,8 +25,12 @@ export class WebsocketService {
     content: '',
     method: 'timer'
   }
+  gameState: Message = {
+    content: '',
+    method: 'gameState'
+  }
 
-  constructor(private roomIdService: RoomIdService, private usersService: UsersService) { }
+  constructor(private roomIdService: RoomIdService, private usersService: UsersService, private memeService: MemesViewService) { }
 
   public openWebSocket(roomId: string){
     this.webSocket = new WebSocket('ws://localhost:5000');
@@ -45,23 +50,29 @@ export class WebsocketService {
       }
       if (MessageDto.method === 'timer') {
         this.timer = MessageDto
+      }
+      if (MessageDto.method === 'gameState') {
+        this.gameState = MessageDto
+        this.roomIdService.gameState = this.gameState.content
+        // if (this.roomIdService.gameState === 'Голосование') {
+        //   this.memeService.collectMemes()
+        // }
         
       }
-      console.log(event)
     };
-
+   
     this.webSocket.onclose = (event) => {
       this.chatMessages = []
+      this.situationMessgae = {content: '', method: 'situation'}
+      this.timer = {content: '', method: 'timer'}
       console.log('Close: ', event);
     }; 
   }
-
   public sendMessage(chatMessageDto: Message){
     this.webSocket.send(JSON.stringify(chatMessageDto));
   }
 
   public closeWebSocket() {
-    console.log(this.usersService.user._id)
     this.webSocket.close( 3002, `${this.usersService.user._id} ${this.roomIdService._id}` );
   }
 }
