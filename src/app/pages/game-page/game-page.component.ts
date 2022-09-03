@@ -2,7 +2,7 @@ import { WebsocketService } from './../../services/websocket.service';
 import { ModalPasswordService } from './../../components/modal-password/modal-password.service';
 import { RoomIdService } from './../../components/room-view/room-id.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Room } from 'src/app/models/room';
+import { Room, RooomState } from 'src/app/models/room';
 import { Router } from '@angular/router';
 import { RoomsService } from 'src/app/services/rooms.service';
 import { chatInit, gamePageAnimation, gameTableInit, headerInit, memeInit, scoreInit } from './game-page-animations';
@@ -45,6 +45,8 @@ export class GamePageComponent implements OnInit, OnDestroy {
   }
 
   initRoom(roomInfo: Room) {
+    this.roomIdService.roomState = roomInfo.roomState
+    this.roomIdService.gameState = roomInfo.gameState
     this.isRoomReady = true;
     console.log(roomInfo)
     this.room = roomInfo;
@@ -56,6 +58,6 @@ export class GamePageComponent implements OnInit, OnDestroy {
       this.WebsocketService.closeWebSocket();
       sessionStorage.removeItem('checkPass')
     }
-
+    this.WebsocketService.closeWebSocket();
   }
 }

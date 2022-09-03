@@ -19,6 +19,7 @@ export class RoomsService {
   }
 
   createRoom(room: Room): Observable<Room> {
+    this.room = room
     return this.http.post<Room>('http://localhost:5000/api/room', room)
       .pipe(
         tap(room => this.rooms.push(room))

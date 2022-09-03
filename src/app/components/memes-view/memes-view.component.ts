@@ -1,3 +1,5 @@
+import { WebsocketService } from './../../services/websocket.service';
+import { RoomIdService } from './../room-view/room-id.service';
 import { MemesViewService } from './memes-view.service';
 import { Meme } from './../../models/memes';
 import { MemesService } from './../../services/memes.service';
@@ -11,7 +13,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class MemesViewComponent implements OnInit {
 
-  constructor(public memeService: MemesService, public memesViewService: MemesViewService) { }
+  constructor(public WebsocketService: WebsocketService, public memeService: MemesService, public memesViewService: MemesViewService, public roomIdService: RoomIdService) { }
   
   ngOnInit(): void {
     this.memeService.getAllMemes().subscribe((memes) => {

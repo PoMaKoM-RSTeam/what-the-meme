@@ -11,14 +11,13 @@ import { Message } from 'src/app/models/message';
 })
 export class TableViewComponent implements OnInit, OnDestroy {
 
-  situationMessage = ''
   
   constructor(public memesViewService: MemesViewService, public websocketService: WebsocketService) { }
 
 
  
   ngOnInit(): void {
-    this.situationMessage = this.websocketService.situationMessgae.content
+
   }
   ngOnDestroy(): void {
     this.memesViewService.currentMeme = []

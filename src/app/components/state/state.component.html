@@ -1,5 +1,5 @@
 <div class="container">
-  <span class="active-state">{{ stateText }}</span>
-  <button class="action-button" *ngIf="activeButton" (click)="startGame()"> {{ buttonText }}</button>
-  <span class="timer" *ngIf="WebsocketService.timer.content">{{ WebsocketService.timer.content }}</span>
+  <span class="active-state" >{{ roomIdService.gameState }}</span>
+  <button class="action-button" *ngIf="activeButton " (click)="startGame()"> {{ buttonText }}</button>
+  <div class="timer" *ngIf="WebsocketService.timer.content">{{ WebsocketService.timer.content }}</div>
 </div>
