@@ -5,7 +5,13 @@
   
   <div class="join-container">
     <div *ngIf="roomsService.rooms" class="rooms-wrap">
-      <div class="rooms-page-title">Комнаты</div>
+      <div class="rooms-title-wrap">
+        <div class="rooms-page-title">Комнаты</div>
+        <div class="room-refresh" (click)="updateRooms()" title="Обновить комнаты">
+          <mat-icon class="refresh-btn">refresh</mat-icon>
+        </div>
+      </div>
+
       <app-room-view
       *ngFor="let room of roomsService.rooms | paginate: { itemsPerPage: 5, currentPage: page } let i = index; "
         [room]="room"

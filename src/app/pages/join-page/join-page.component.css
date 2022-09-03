@@ -21,12 +21,32 @@
   border-radius: 24px;
   
 }
-.rooms-page-title {
+
+.rooms-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
   color: #767185;
   font-size: 1.5rem;
   width: 460px;
-  padding: 15px 0;
+  
   border-bottom: 1px solid #767185
+}
+.room-refresh {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.room-refresh:hover {
+  scale: 1.1;
+}
+.room-refresh:hover .refresh-btn{
+  color: #58C2BD;
+}
+.room-refresh:active{
+  transform: translateY(2px);
 }
 .custom-page-controls {
   display: flex;
