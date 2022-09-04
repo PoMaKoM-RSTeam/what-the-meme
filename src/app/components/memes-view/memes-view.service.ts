@@ -1,5 +1,4 @@
 import { RoomIdService } from './../room-view/room-id.service';
-import { WebsocketService } from './../../services/websocket.service';
 import { Meme } from './../../models/memes';
 import { CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Injectable } from '@angular/core';
@@ -46,14 +45,8 @@ export class MemesViewService {
     }
     
   }
-  collectMemes() {
-    const message = {
-      user: JSON.parse(localStorage.getItem('user')!)._id,
-      content: this.currentMeme.join(''),
-      method: 'meme',
-      id: this.roomIdService._id
-    }
-    console.log(message)
-  //  this.WebsocketService.sendMessage(message);
+  getRandomArrayElements(arr: Meme[], count: number) {
+    return arr.sort(() => .5 - Math.random()).slice(0,count)
   }
+ 
 }

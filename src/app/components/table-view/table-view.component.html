@@ -6,26 +6,46 @@
         {{ this.websocketService.situationMessgae.content }}
       </div>
     </div>
-  <div class="table-memes__wrap">
-    <div class="table-memes__current">
-      <div
-        id="list-2"
-        cdkDropList
-        #doneList="cdkDropList"
-        [cdkDropListData]="memesViewService.currentMeme"
-        cdkDropListConnectedTo="list-1"
-        class="meme-container"
-        (cdkDropListDropped)="memesViewService.drop($event)"
-        [cdkDropListEnterPredicate]="memesViewService.returneOneItem"
-      >
-        <div  *ngFor="let meme of memesViewService.currentMeme let i = index;" cdkDrag class="meme-wrap">
-         
-          <img [src]="'https://agile-reef-40611.herokuapp.com/'+meme.link" [alt]="'Meme - '+i" class="meme-img">
- 
+    <div>
+      <div class="table-memes__wrap">
+        <div class="table-memes__current">
+          <div
+            id="list-2"
+            cdkDropList
+            #doneList="cdkDropList"
+            [cdkDropListData]="memesViewService.currentMeme"
+            cdkDropListConnectedTo="list-1"
+            class="meme-container"
+            (cdkDropListDropped)="memesViewService.drop($event)"
+            [cdkDropListEnterPredicate]="memesViewService.returneOneItem"
+          >
+            <div  *ngFor="let meme of memesViewService.currentMeme let i = index;" cdkDrag class="meme-wrap">
+            
+              <img [src]="'https://agile-reef-40611.herokuapp.com/'+meme.link" [alt]="'Meme - '+i" class="meme-img">
+    
+            </div>
+          </div>
+          
         </div>
       </div>
+      <div  class="meme-btns_wrapp">
+        <button class="meme-btn next-meme" (click)="skipMeme()">Next</button>
+        <button class="meme-btn  like-meme" (click)="likeMeme()">Like</button>
+       </div>
     </div>
-  </div>
+    
+  <!-- <div class="meme-voting__wrap">
+    <div class="table-memes__wrap">
+      <div class="meme-voting-img__wrap">
+        <img class="meme-img" src="" alt="">
+      </div>
+    </div>
+     <div class="meme-btns_wrapp">
+      <button class="meme-btn next-meme"></button>
+      <button class="meme-btn  like-meme"></button>
+     </div>
+   </div> -->
+
   </div>
   
 

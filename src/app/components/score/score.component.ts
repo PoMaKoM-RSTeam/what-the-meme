@@ -1,4 +1,5 @@
 import { animation } from '@angular/animations';
+import { ScoreService } from './../../services/score.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { playerInit } from './score-animation';
 
@@ -10,33 +11,7 @@ import { playerInit } from './score-animation';
 })
 export class ScoreComponent implements OnInit, OnChanges {
 
-  
-
-  players = [
-    {
-      img: "./assets/images/avatar-images/baby-yoda.jpg",
-      name: "Silicon Power",
-      score: 14
-    },
-    {
-      img: "./assets/images/avatar-images/baby-yoda.jpg",
-      name: "Flash",
-      score: 11
-    },
-    {
-      img: "./assets/images/avatar-images/baby-yoda.jpg",
-      name: "Kevin",
-      score: 4
-    },
-    {
-      img: "./assets/images/avatar-images/baby-yoda.jpg",
-      name: "Tomas",
-      score: 34
-    },
-  ]
-
-
-  constructor() { }
+  constructor( public scoreService: ScoreService) { }
   ngOnChanges(changes: SimpleChanges): void {
     throw new Error('Method not implemented.');
   }
@@ -46,7 +21,7 @@ export class ScoreComponent implements OnInit, OnChanges {
   }
 
   playersSort() {
-    const sortPlayers = this.players.sort((a, b) => b.score - a.score);
+    const sortPlayers = this.scoreService.score.sort((a, b) => b.score! - a.score!);
     return sortPlayers;
   }
 }

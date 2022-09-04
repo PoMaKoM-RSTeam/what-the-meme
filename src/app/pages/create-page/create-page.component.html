@@ -1,5 +1,5 @@
 <ng-template dynamicChildLoader=""></ng-template>
-<div class="create-wrap">
+<div class="create-wrap" @createPageAnimation>
   <div class="logo-wrap">
     <app-logo></app-logo>
   </div>
@@ -39,7 +39,7 @@
           </div>
           <span class="setting-title">Сделать игру приватной</span>
         </div>
-        <div class="setting-container" *ngIf="privateMode">
+        <div class="setting-container" *ngIf="privateMode" @passContainer>
           <label class="setting-title" for="pass">Пароль к игре</label>
           <input type="text" id="pass" class="input-setting-text" placeholder="Введите пароль к игре" maxlength="4"
             formControlName="pass">

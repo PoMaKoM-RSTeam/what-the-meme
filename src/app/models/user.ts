@@ -6,7 +6,7 @@ export interface User {
   image?: string
 }
 export interface RoomUser extends User {
-  score: number,
-  memes: Meme[],
+  score?: number,
+  memes?: Meme[],
 }
 
