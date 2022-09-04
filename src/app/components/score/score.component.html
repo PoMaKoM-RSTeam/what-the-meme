@@ -4,9 +4,9 @@
   </div>
 
   <div class="players-container">
-    <div class="player-container" *ngFor="let player of players">
+    <div class="player-container" *ngFor="let player of scoreService.score">
       <div class="player-data">
-        <img [src]="player.img" alt="" class="player-img">
+        <img [src]="player.image" alt="" class="player-img">
         <span class="player-name"> {{ player.name }}</span>
       </div>
       <div class="score-container">

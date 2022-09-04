@@ -16,15 +16,10 @@ export class MemesViewComponent implements OnInit {
   constructor(public WebsocketService: WebsocketService, public memeService: MemesService, public memesViewService: MemesViewService, public roomIdService: RoomIdService) { }
   
   ngOnInit(): void {
-    this.memeService.getAllMemes().subscribe((memes) => {
-      this.memesViewService.memes = memes
-      this.memesViewService.memes = this.getRandomArrayElements(this.memesViewService.memes, 5)
-    })
+    
   }
   
-  getRandomArrayElements(arr: Meme[], count: number) {
-    return arr.sort(() => .5 - Math.random()).slice(0,count)
-  }
+  
 
   
   

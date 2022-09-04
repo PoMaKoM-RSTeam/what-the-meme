@@ -46,3 +46,37 @@
 .meme-card {
   cursor: pointer;
 }
+.meme-btns_wrapp {
+  margin-top: 5mm;
+  display: flex;
+  justify-content: space-around;
+}
+.meme-btn {
+  width: 181px;
+  font-size: 1.2rem;
+  border-radius: 16px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  letter-spacing: 0.05em;
+
+}
+
+.next-meme {
+  background-color: #C25284;
+  margin-right: 15px;
+}
+.next-meme:hover {
+  background-color: #eb69a4;
+}
+.like-meme {
+  background-color: #493964;
+}
+.like-meme:hover {
+  background-color: #604b83;
+}

@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   background: #2E2B36;
   left: 50%;
   top: 10%;
@@ -21,8 +21,8 @@
   user-select: none;
   color: white;
   z-index: 10;
-  padding-bottom: 10px;
-  min-width: 285px;
+  padding-bottom: 20px;
+  min-width: 300px;
 }
 
 .modal-title {
@@ -30,14 +30,14 @@
   text-align: center;
   background-color: rgb(255, 60, 60);
   border-radius: 10px 10px 0 0;
-  padding: 10px;
+  padding: 10px 20px;
   width: 100%;
 }
 
 .modal-text {
   font-size: 24px;
   color: #FFFFFF;
-  padding: 0 10px;
+  padding: 0 40px;
   white-space: pre;
   text-align: left;
   user-select: text;
@@ -53,7 +53,7 @@
   background-color: #C25284;
   cursor: pointer;
   color: white;
-  width: 90%;
+  width: 80%;
 }
 
 .modal-button:hover {

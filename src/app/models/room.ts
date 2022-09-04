@@ -23,7 +23,7 @@ export interface Room {
   roomState: RooomState
   gameState: string
   admin: string
-  gameProgress?: Round[]
+  gameProgress?: Round
 }
 
 export enum RooomState {
