@@ -7,11 +7,13 @@ import { DynamicChildLoaderDirective } from 'src/app/directives/dynamic-child-lo
 import { Room } from 'src/app/models/room';
 import { User, RoomUser } from 'src/app/models/user';
 import { RoomsService } from 'src/app/services/rooms.service';
+import { createPageAnimation, passContainer } from './create-page-animation';
 
 @Component({
   selector: 'app-create-page',
   templateUrl: './create-page.component.html',
-  styleUrls: ['./create-page.component.css']
+  styleUrls: ['./create-page.component.css'],
+  animations: [createPageAnimation, passContainer]
 })
 export class CreatePageComponent implements OnInit {
 
@@ -47,10 +49,10 @@ export class CreatePageComponent implements OnInit {
       this.room.users = [this.admin];
       this.room.image = this.admin.image || '';
       this.room.admin = this.admin._id!
-      this.roomService.createRoom(this.room).subscribe(response => { 
-        this.room._id = response._id; this.router.navigateByUrl(`/room/${this.room._id}`) 
+      this.roomService.createRoom(this.room).subscribe(response => {
+        this.room._id = response._id; this.router.navigateByUrl(`/room/${this.room._id}`)
         this.roomIdService._id = this.room._id!
-    });
+      });
     } else {
       this.showModal();
     }
