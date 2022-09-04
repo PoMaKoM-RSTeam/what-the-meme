@@ -4,7 +4,8 @@
   </div>
 
   <div class="players-container">
-    <div class="player-container" *ngFor="let player of scoreService.score">
+
+    <div class="player-container" *ngFor="let player of scoreService.score"  @playerInit>
       <div class="player-data">
         <img [src]="player.image" alt="" class="player-img">
         <span class="player-name"> {{ player.name }}</span>
@@ -12,13 +13,6 @@
       <div class="score-container">
         <span class="player-score"> {{ player.score }}</span>
       </div>
-    </div>
-  </div>
-
-  <div class="goat-container">
-    <p class="goat-title">Цель игры</p>
-    <div class="goat">
-      <span class="goat-text">99</span>
     </div>
   </div>
 </div>
