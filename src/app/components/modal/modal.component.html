@@ -1,5 +1,5 @@
-<div class="backdrop" (click)="close.emit()"></div>
-<div class="modal">
+<div class="backdrop" (click)="close.emit()" @modalInit></div>
+<div class="modal" @modalInit>
   <h1 class="modal-title">{{ title }}</h1>
   <p class="modal-text">
     {{ text }}
