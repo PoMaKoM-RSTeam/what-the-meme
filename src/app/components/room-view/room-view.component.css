@@ -6,6 +6,7 @@
   padding: 15px 0;
   background-color: #2e2b36;
   border-bottom: 1px solid #63606b;
+  position: relative;
 }
 .room-name__container {
   display: flex;

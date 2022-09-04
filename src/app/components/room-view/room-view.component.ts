@@ -4,11 +4,13 @@ import { RoomIdService } from './room-id.service';
 import { Router } from '@angular/router';
 import { Room } from './../../models/room';
 import { Component, Input, OnInit } from '@angular/core';
+import { roomViewAnimation } from './room-view-animation';
 
 @Component({
   selector: 'app-room-view',
   templateUrl: './room-view.component.html',
-  styleUrls: ['./room-view.component.css']
+  styleUrls: ['./room-view.component.css'],
+  animations: [roomViewAnimation]
 })
 export class RoomViewComponent implements OnInit {
 
