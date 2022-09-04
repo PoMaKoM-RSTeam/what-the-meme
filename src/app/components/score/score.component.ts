@@ -1,11 +1,16 @@
+import { animation } from '@angular/animations';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { playerInit } from './score-animation';
 
 @Component({
   selector: 'app-score',
   templateUrl: './score.component.html',
-  styleUrls: ['./score.component.css']
+  styleUrls: ['./score.component.css'],
+  animations: [playerInit]
 })
 export class ScoreComponent implements OnInit, OnChanges {
+
+  
 
   players = [
     {
@@ -44,5 +49,4 @@ export class ScoreComponent implements OnInit, OnChanges {
     const sortPlayers = this.players.sort((a, b) => b.score - a.score);
     return sortPlayers;
   }
-
 }

@@ -41,6 +41,7 @@
   border-radius: 5px;
   padding: 5px;
   gap: 8px;
+  position: relative;
 }
 
 .player-data {
@@ -73,43 +74,4 @@
 
 .player-score {
   color: white;
-}
-
-.goat-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: #4A4557;
-  border-top: 1px solid #767185;
-  justify-content: space-between;
-  padding: 0px 10px;
-  height: 53px;
-  margin-top: auto;
-  justify-self: flex-end;
-}
-
-.goat-title {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 36px;
-  display: flex;
-  align-items: center;
-  color: #DDDDDD;
-}
-
-.goat {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  background: #C25284;
-  border-radius: 50%;
-}
-
-.goat-text {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 36px;
-  color: #FFFFFF;
 }
