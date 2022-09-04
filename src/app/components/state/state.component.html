@@ -1,5 +1,5 @@
 <div class="container">
-  <span class="active-state" >{{ roomIdService.gameState }}</span>
+  <span class="active-state" >{{ stateService.gameState | async}}</span>
   <button class="action-button" *ngIf="activeButton " (click)="startGame()"> {{ buttonText }}</button>
   <div class="timer" *ngIf="WebsocketService.timer.content">{{ WebsocketService.timer.content }}</div>
 </div>

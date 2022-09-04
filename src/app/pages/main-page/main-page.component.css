@@ -1,9 +1,12 @@
 .main-page__container {
+  height: 100vh;
+}
+.main {
   display: flex;
   gap: 20px;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 93vh;
 }
 .meme-wrap {
   display: flex;

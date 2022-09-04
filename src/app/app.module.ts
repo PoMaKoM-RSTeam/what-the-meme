@@ -32,6 +32,7 @@ import { MemesViewComponent } from './components/memes-view/memes-view.component
 import {MatCardModule} from '@angular/material/card';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { TableViewComponent } from './components/table-view/table-view.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { TableViewComponent } from './components/table-view/table-view.component
     StateComponent,
     MemesViewComponent,
     TableViewComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

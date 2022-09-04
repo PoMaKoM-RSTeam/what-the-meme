@@ -1,14 +1,14 @@
+import { StateService } from './state.service';
 import { MemesViewService } from './../components/memes-view/memes-view.service';
 import { UsersService } from './users.service';
 import { Message } from '../models/message';
 import { RoomIdService } from './../components/room-view/room-id.service';
 import { Injectable } from '@angular/core';
+import { CurrentMeme } from '../models/memes';
 
 
 
 const CHAT_URL = "ws://localhost:5000";
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +29,8 @@ export class WebsocketService {
     content: '',
     method: 'gameState'
   }
-
-  constructor(private roomIdService: RoomIdService, private usersService: UsersService, private memeService: MemesViewService) { }
+  memes: CurrentMeme[]
+  constructor(private roomIdService: RoomIdService, private usersService: UsersService, private stateService: StateService ) { }
 
   public openWebSocket(roomId: string){
     this.webSocket = new WebSocket('ws://localhost:5000');
@@ -53,11 +53,11 @@ export class WebsocketService {
       }
       if (MessageDto.method === 'gameState') {
         this.gameState = MessageDto
-        this.roomIdService.gameState = this.gameState.content
-        // if (this.roomIdService.gameState === 'Голосование') {
-        //   this.memeService.collectMemes()
-        // }
-        
+        this.stateService.gameState.next(this.gameState.content!) 
+      }
+      if (MessageDto.method === 'meme') {
+        this.memes = MessageDto.content
+        console.log(this.memes)
       }
     };
    
@@ -65,7 +65,6 @@ export class WebsocketService {
       this.chatMessages = []
       this.situationMessgae = {content: '', method: 'situation'}
       this.timer = {content: '', method: 'timer'}
-      console.log('Close: ', event);
     }; 
   }
   public sendMessage(chatMessageDto: Message){
