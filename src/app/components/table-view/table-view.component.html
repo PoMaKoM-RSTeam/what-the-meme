@@ -21,16 +21,16 @@
           >
             <div  *ngFor="let meme of memesViewService.currentMeme let i = index;" cdkDrag class="meme-wrap">
             
-              <img [src]="'https://agile-reef-40611.herokuapp.com/'+meme.link" [alt]="'Meme - '+i" class="meme-img">
+              <img *ngIf="meme" [src]="'https://agile-reef-40611.herokuapp.com/'+meme.link" [alt]="'Meme - '+i" class="meme-img">
     
             </div>
           </div>
           
         </div>
       </div>
-      <div  class="meme-btns_wrapp">
-        <button class="meme-btn next-meme" (click)="skipMeme()">Next</button>
-        <button class="meme-btn  like-meme" (click)="likeMeme()">Like</button>
+      <div *ngIf="isVoting" class="meme-btns_wrapp">
+        <button class="meme-btn next-meme" (click)="skipMeme()">Следующий</button>
+        <button class="meme-btn  like-meme" (click)="likeMeme()">Лайк</button>
        </div>
     </div>
     

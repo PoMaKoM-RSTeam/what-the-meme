@@ -26,7 +26,7 @@ export class RoomViewComponent implements OnInit {
     {
       this.roomIdService._id = roomId;
       this.roomIdService.pass = roomPass;
-      this.room.users.push(JSON.parse(localStorage.getItem('user')!))
+      this.room.users.push(JSON.parse(sessionStorage.getItem('user')!))
       this.roomsService.updateRoom(roomId, this.room).subscribe()
       this.modalPasswordService.open();
     }

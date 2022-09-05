@@ -33,6 +33,7 @@ import {MatCardModule} from '@angular/material/card';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { TableViewComponent } from './components/table-view/table-view.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ScoreSortPipe } from './pipes/score-sort.pipe';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MemesViewComponent,
     TableViewComponent,
     FooterComponent,
+    ScoreSortPipe,
   ],
   imports: [
     BrowserModule,

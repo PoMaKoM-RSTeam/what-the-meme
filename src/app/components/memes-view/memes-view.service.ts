@@ -10,6 +10,7 @@ export class MemesViewService {
 
   currentMeme: Meme[] = []
   memes: Meme[] = []
+  votingMemes: Meme[] = []
   imgLink = ''
   constructor( public roomIdService: RoomIdService) { }
   

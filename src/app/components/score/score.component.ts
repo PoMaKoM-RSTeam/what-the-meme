@@ -1,6 +1,8 @@
+import { WebsocketService } from './../../services/websocket.service';
+import { UsersService } from './../../services/users.service';
 import { animation } from '@angular/animations';
 import { ScoreService } from './../../services/score.service';
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component,  OnInit, SimpleChanges } from '@angular/core';
 import { playerInit } from './score-animation';
 
 @Component({
@@ -9,19 +11,12 @@ import { playerInit } from './score-animation';
   styleUrls: ['./score.component.css'],
   animations: [playerInit]
 })
-export class ScoreComponent implements OnInit, OnChanges {
+export class ScoreComponent implements OnInit {
 
-  constructor( public scoreService: ScoreService) { }
-  ngOnChanges(changes: SimpleChanges): void {
-    throw new Error('Method not implemented.');
-  }
-
+  constructor( public scoreService: ScoreService, private usersService: UsersService, private websocketService: WebsocketService) { }
+  
   ngOnInit(): void {
-    this.playersSort();
+    
   }
 
-  playersSort() {
-    const sortPlayers = this.scoreService.score.sort((a, b) => b.score! - a.score!);
-    return sortPlayers;
-  }
 }

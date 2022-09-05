@@ -1,10 +1,12 @@
+import { ScoreService } from './score.service';
+import { RoomUser } from 'src/app/models/user';
+import { Meme } from './../models/memes';
 import { StateService } from './state.service';
 import { MemesViewService } from './../components/memes-view/memes-view.service';
 import { UsersService } from './users.service';
 import { Message } from '../models/message';
 import { RoomIdService } from './../components/room-view/room-id.service';
 import { Injectable } from '@angular/core';
-import { CurrentMeme } from '../models/memes';
 
 
 
@@ -29,14 +31,15 @@ export class WebsocketService {
     content: '',
     method: 'gameState'
   }
-  memes: CurrentMeme[]
-  constructor(private roomIdService: RoomIdService, private usersService: UsersService, private stateService: StateService ) { }
+  score: RoomUser[]
+  memes: Meme[]
+  constructor(private roomIdService: RoomIdService, private usersService: UsersService, private stateService: StateService, private scoreService: ScoreService ) { }
 
   public openWebSocket(roomId: string){
     this.webSocket = new WebSocket('ws://localhost:5000');
     this.webSocket.onopen = () => {
     this.webSocket.send(JSON.stringify({id: roomId, method: 'connection'}));
-    this.webSocket.send(JSON.stringify({user: JSON.parse(localStorage.getItem('user')!).name, id: roomId, content: 'Зашёл в комнату', method: 'message'}));
+    this.webSocket.send(JSON.stringify({user: JSON.parse(sessionStorage.getItem('user')!).name, id: roomId, content: 'Зашёл в комнату', method: 'message'}));
     };
 
 
@@ -57,7 +60,11 @@ export class WebsocketService {
       }
       if (MessageDto.method === 'meme') {
         this.memes = MessageDto.content
-        console.log(this.memes)
+      }
+      if (MessageDto.method === 'score') {
+        this.score = MessageDto.content
+        this.scoreService.score = this.score
+       
       }
     };
    

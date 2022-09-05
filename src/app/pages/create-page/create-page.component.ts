@@ -44,7 +44,7 @@ export class CreatePageComponent implements OnInit {
 
   onSubmit(): void {
     if (this.form.valid) {
-      this.admin = JSON.parse(localStorage.getItem('user') || this.anon)
+      this.admin = JSON.parse(sessionStorage.getItem('user') || this.anon)
       this.room = this.form.value;
       this.room.users = [this.admin];
       this.room.image = this.admin.image || '';
