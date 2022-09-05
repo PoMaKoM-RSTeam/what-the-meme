@@ -20,9 +20,7 @@
             [cdkDropListEnterPredicate]="memesViewService.returneOneItem"
           >
             <div  *ngFor="let meme of memesViewService.currentMeme let i = index;" cdkDrag class="meme-wrap">
-            
               <img *ngIf="meme" [src]="'https://agile-reef-40611.herokuapp.com/'+meme.link" [alt]="'Meme - '+i" class="meme-img">
-    
             </div>
           </div>
           

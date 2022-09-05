@@ -12,13 +12,13 @@ import { sitationInit } from './table-view-animation';
   animations: [sitationInit]
 })
 export class TableViewComponent implements OnInit, OnDestroy {
-
   
   constructor(public memesViewService: MemesViewService, private roomIdService: RoomIdService, public websocketService: WebsocketService,  public stateService: StateService) { }
 
   memePosition = 0
   sub: Subscription
   isVoting: boolean = false
+
   ngOnInit(): void {
     this.sub = this.stateService.gameState.subscribe((gameState)=>{
       if (gameState === 'Голосование') {
@@ -31,7 +31,6 @@ export class TableViewComponent implements OnInit, OnDestroy {
   }
 
   skipMeme() {
-    
     if (this.memesViewService.votingMemes.length!==0 && this.memePosition < this.memesViewService.votingMemes.length) {
      if (this.memePosition==this.memesViewService.votingMemes.length-1) {
        this.isVoting = false
@@ -39,7 +38,6 @@ export class TableViewComponent implements OnInit, OnDestroy {
       this.memesViewService.currentMeme[0].link = this.memesViewService.votingMemes[this.memePosition==this.memesViewService.votingMemes.length-1?this.memePosition: this.memePosition+1].link
       this.memePosition+=1;
     } 
-    
   }
   likeMeme() {
     

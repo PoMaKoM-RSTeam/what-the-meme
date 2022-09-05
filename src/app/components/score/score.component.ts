@@ -1,8 +1,7 @@
 import { WebsocketService } from './../../services/websocket.service';
 import { UsersService } from './../../services/users.service';
-import { animation } from '@angular/animations';
 import { ScoreService } from './../../services/score.service';
-import { Component,  OnInit, SimpleChanges } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { playerInit } from './score-animation';
 
 @Component({
