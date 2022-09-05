@@ -1,19 +1,18 @@
-
-.logo-wrap {
-  width: 100px;
-}
-.logo-wrap a{
+.logo-wrap a {
   text-decoration: none;
 }
+
 .meme-logo {
   font-size: 1.1rem;
   color: #58C2BD;
   text-transform: uppercase;
   font-weight: bold;
 }
+
 .meme-logo__first {
   color: #382756;
 }
+
 .meme-logo__second {
   color: #BF437A;
 }
