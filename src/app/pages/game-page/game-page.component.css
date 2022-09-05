@@ -4,11 +4,10 @@
   overflow: hidden;
 }
 
-
 .header {
   display: flex;
   background-color: #2e2b36;
-  height: 70px;
+  height: 50px;
   margin-top: 14px;
   align-items: center;
   justify-content: space-between;
@@ -19,11 +18,15 @@
   position: relative;
 }
 
+.logo {
+  width: 20%
+}
+
 .state {
   text-transform: uppercase;
   color: wheat;
   font-size: 34px;
-  width: 60%;
+  width: 55%;
 }
 
 .leave-lobby {
@@ -38,10 +41,10 @@
 
 .main {
   display: flex;
-  margin: 16px 0;
+  margin: 10px 0;
   width: 100%;
   gap: 5px;
-  
+  height: 60vh;
 }
 
 .chat {
@@ -52,13 +55,15 @@
 }
 
 .chat-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   width: 100%;
   border: 1px solid #767185;
   border-radius: 8px;
   overflow: hidden;
 }
-
 
 .game-table {
   background-color: #2e2b36;;
@@ -71,9 +76,9 @@
 .score-table {
   width: 300px;
   background: #2E2B36;
-  border: 1px solid #767185;
-  border-radius: 8px;
   position: relative;
+  border: none;
+  border-radius: 8px;
 }
 
 .score {
@@ -89,6 +94,5 @@
 }
 
 .mem-slider {
-  
   width: 100%;
 }

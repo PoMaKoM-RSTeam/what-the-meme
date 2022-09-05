@@ -4,10 +4,12 @@ import { WebsocketService } from './../../services/websocket.service';
 import { MemesViewService } from './../memes-view/memes-view.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { sitationInit } from './table-view-animation';
 @Component({
   selector: 'app-table-view',
   templateUrl: './table-view.component.html',
-  styleUrls: ['./table-view.component.css']
+  styleUrls: ['./table-view.component.css'],
+  animations: [sitationInit]
 })
 export class TableViewComponent implements OnInit, OnDestroy {
 

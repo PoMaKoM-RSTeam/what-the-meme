@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
 .table-wrap {
   display: flex;
   gap: 10px;
@@ -7,28 +8,44 @@
   height: 100%;
   justify-content: center;
 }
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .table-title {
   color: #81759E;
   font-size: 1.125rem;
   width: 100%;
-  padding: 16px 12px;
+  height: 30px;
+  padding: 5px 12px;
   border-bottom: 1px solid #767185
 }
+
 .table-situation__wrap {
-  height: 429px;
   border-radius: 8px;
   width: 274px;
   background-color: #F1F1F1;
 }
+
 .table-memes__wrap {
   display: flex;
   background-color: #1C1A21;
   border-radius: 8px;
   width: 454px;
-  height: 329px;
   align-items: center;
   justify-content: center;
 }
+
+.table-memes__current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .table-situation {
   font-family: 'Roboto Condensed', sans-serif;
   padding: 12px;
@@ -36,21 +53,29 @@
   font-size: 1.5rem;
   line-height: 2rem;
 }
+
 .meme-container {
-  height: 280px;
+  height: 290px;
   width: 417px;
+  display: flex;
+  align-items: center;
 }
+
 .meme-img {
   width: 100%;
 }
+
 .meme-card {
   cursor: pointer;
 }
+
 .meme-btns_wrapp {
+  height: 70px;
   margin-top: 5mm;
   display: flex;
   justify-content: space-around;
 }
+
 .meme-btn {
   width: 181px;
   font-size: 1.2rem;
@@ -71,12 +96,15 @@
   background-color: #C25284;
   margin-right: 15px;
 }
+
 .next-meme:hover {
   background-color: #eb69a4;
 }
+
 .like-meme {
   background-color: #493964;
 }
+
 .like-meme:hover {
   background-color: #604b83;
 }

@@ -5,11 +5,13 @@ import { Meme } from './../../models/memes';
 import { MemesService } from './../../services/memes.service';
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { memeInit } from './meme-view-animation';
 
 @Component({
   selector: 'app-memes-view',
   templateUrl: './memes-view.component.html',
-  styleUrls: ['./memes-view.component.css']
+  styleUrls: ['./memes-view.component.css'],
+  animations: [memeInit]
 })
 export class MemesViewComponent implements OnInit {
 

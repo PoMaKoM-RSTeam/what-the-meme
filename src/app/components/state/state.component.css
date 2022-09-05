@@ -1,7 +1,6 @@
 .container {
   display: flex;
   justify-content: space-between;
-  color: rebeccapurple;
   font-weight: bold;
   align-items: center;
 }
@@ -13,7 +12,7 @@
 
 .action-button {
   color: white;
-  background-color: #382756;
+  background-color: #493964;
   font-size: 20px;
   font-weight: bold;
   border: none;
