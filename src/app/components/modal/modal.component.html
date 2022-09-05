@@ -1,9 +1,0 @@
-<div class="backdrop" (click)="close.emit()"></div>
-<div class="modal">
-  <h1 class="modal-title">{{ title }}</h1>
-  <p class="modal-text">
-    {{ text }}
-  </p>
-  <button class="modal-button" (click)="copyLink.emit()" *ngIf="actionButton">{{ actionButtonText }}</button>
-  <button class="modal-button" (click)="close.emit()">Закрыть</button>
-</div>

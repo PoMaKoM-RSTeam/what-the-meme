@@ -1,6 +1,0 @@
-<div class="navigation-wrap">
-  <ng-content></ng-content>
-  <span *ngIf="chekName && !this.navigationService.name" class="check-name">Введите имя</span>
-  <button (click)="collectUser('/join')" class="nav-btn navigation-btn__join">НАЙТИ</button>
-  <button  (click)="collectUser('/create')" class="nav-btn navigation-btn__create">СОЗДАТЬ</button>
-</div>
