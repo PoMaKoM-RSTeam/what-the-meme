@@ -26,12 +26,10 @@ export class StateComponent implements OnInit, OnDestroy {
  
   ngOnInit(): void {
     this.activeButton = this.roomIdService.roomState ==='IsOpen'
-    console.log(this.roomIdService.roomState)
     this.sub = this.stateService.gameState.subscribe((gameState)=>{
-      console.log(gameState)
       if (gameState === 'Собираем мемы') {
         const message = {
-          user: JSON.parse(localStorage.getItem('user')!)._id,
+          user: JSON.parse(sessionStorage.getItem('user')!)._id,
           content: this.memesViewService.currentMeme[0]?.link,
           method: 'meme',
           id: this.roomIdService._id
@@ -46,7 +44,14 @@ export class StateComponent implements OnInit, OnDestroy {
         })
       }
       if (gameState === 'Голосование') {
-        this.memesViewService.currentMeme.push(this.WebsocketService.memes.filter(meme => meme.id !== JSON.parse(localStorage.getItem('user')!)._id)[0])
+        if (this.WebsocketService.memes) {
+          this.memesViewService.votingMemes = this.WebsocketService.memes.filter(meme => meme._id !== JSON.parse(sessionStorage.getItem('user')!)._id)
+        this.memesViewService.currentMeme[0] = this.memesViewService.votingMemes[0]
+        }
+        
+      }
+      if (gameState !== 'Ожидание игроков') {
+        this.activeButton = false;
       }
     });
     

@@ -34,7 +34,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.currentRoomId = this.roomIdService._id
     
-    this.user = JSON.parse(localStorage.getItem('user') as string)
+    this.user = JSON.parse(sessionStorage.getItem('user') as string)
     this.usersService.getUser(this.user._id).subscribe(response => this.userName = response.name as string)
 
   }

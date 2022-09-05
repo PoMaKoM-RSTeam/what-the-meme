@@ -24,30 +24,38 @@ export class TableViewComponent implements OnInit, OnDestroy {
       if (gameState === 'Голосование') {
         this.isVoting=true;
       }else {
+        this.memePosition = 0;
         this.isVoting=false;
       }
-      
     });
   }
 
   skipMeme() {
-    if (this.websocketService.memes[this.memePosition]) {
-      this.memesViewService.currentMeme[0].link = this.websocketService.memes[this.memePosition].meme
+    
+    if (this.memesViewService.votingMemes.length!==0 && this.memePosition < this.memesViewService.votingMemes.length) {
+     if (this.memePosition==this.memesViewService.votingMemes.length-1) {
+       this.isVoting = false
+     }
+      this.memesViewService.currentMeme[0].link = this.memesViewService.votingMemes[this.memePosition==this.memesViewService.votingMemes.length-1?this.memePosition: this.memePosition+1].link
       this.memePosition+=1;
-    }
+    } 
     
   }
   likeMeme() {
-    if (this.websocketService.memes[this.memePosition]) {
-      this.memesViewService.currentMeme[0].link = this.websocketService.memes[this.memePosition].meme
-      this.memePosition+=1;
+    
+    if (this.memesViewService.votingMemes.length!==0 && this.memePosition <= this.memesViewService.votingMemes.length) {
+      if (this.memePosition==this.memesViewService.votingMemes.length-1) {
+        this.isVoting = false
+      }
+      this.memesViewService.currentMeme[0].link = this.memesViewService.votingMemes[this.memePosition==this.memesViewService.votingMemes.length-1?this.memePosition: this.memePosition+1].link
       const message = {
-        user: this.websocketService.memes[this.memePosition].id,
+        user: this.memesViewService.votingMemes[this.memePosition]._id,
         content:'1',
         method: 'score',
         id: this.roomIdService._id
       }
-      this.websocketService.sendMessage(message)
+      this.websocketService.sendMessage(message);
+      this.memePosition+=1;
     }
 
   }

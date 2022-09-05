@@ -27,7 +27,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    if (!localStorage.getItem('user')) {
+    if (!sessionStorage.getItem('user')) {
       this.router.navigateByUrl('/');
     }
     else {
@@ -43,7 +43,6 @@ export class GamePageComponent implements OnInit, OnDestroy {
       const room = this.roomService.getRoom(id).subscribe(response => { this.initRoom(response) 
       
         this.roomIdService.roomState = response.roomState
-       
         this.scoreService.score = response.users
         this.stateService.gameState.next(response.gameState)
 
@@ -61,7 +60,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (localStorage.getItem('user')) {
+    if (sessionStorage.getItem('user')) {
       this.WebsocketService.closeWebSocket();
       sessionStorage.removeItem('checkPass')
     }
